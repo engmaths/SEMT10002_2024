@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYG{k}{def} \PYG{n+nf}{RetSquared}\PYG{p}{(}\PYG{n}{Number}\PYG{p}{):}
+            \PYG{c+c1}{\PYGZsh{} Returns the square}
+            \PYG{n}{Squared} \PYG{o}{=} \PYG{o}{\PYGZlt{}}\PYG{err}{?}\PYG{o}{\PYGZgt{}} \PYG{o}{**} \PYG{l+m+mi}{2}
+            \PYG{k}{return} \PYG{o}{\PYGZlt{}}\PYG{err}{?}\PYG{o}{\PYGZgt{}}
+\end{Verbatim}

@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header
+\documentclass[11pt]{report}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{nicefrac}
+\usepackage[lastexercise]{exercise}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\graphicspath{ {./weekly_content/img/} }
+
+\setlength{\parindent}{0cm}
+
+\renewcommand{\ExerciseHeader}{\large\textbf{\ExerciseName~\ExerciseHeaderNB} - \textbf{\ExerciseTitle}\medskip}
+
+\renewcommand{\ExePartHeader}{\medskip\textbf{\ExePartName\ExePartHeaderNB\ExePartHeaderTitle\medskip}}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Exercises -- Week 2: \\Control Structures: Conditional Statements}
+\subsubsection*{EMAT10007 -- Introduction to Computer Programming}
+\subsection*{\Large Exercises -- Week 2: \\Control Structures: Conditional Statements}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Getting Started: Pycharm IDE}
+        \subsubsection*{Open PyCharm on linux lab computers}
+            \begin{itemize}
+                \item{Scroll down to bring up log in screen and log in with your UoB user name and password.}
+                \item{Click activities (top left corner) to bring up the side panel.}
+                \item{Click the grid of 9 dots to bring up applications.}
+                \item{Choose JetBrains PyCharm}
+                \item{When prompted about the user agreement click accept and read}            
+            \end{itemize}
+    }        
+}%
+
+\vspace{0.5em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Create a new project and Python file}
+            \begin{itemize}
+                \item{Click New project or File $>>$ New project $>>$ Pure python}
+                \item{Unselect 'Create a main.py welcome script'}
+    	    \item{Note the file location:\\ /home/{\bf UoB\_username}/PycharmProjects/{\bf your\_projectname}/venv \\ where {\bf UoB\_username} is your UoB username and rename {\bf your\_projectname} to be a name of your choice e.g. EMAT10007\_exercises} 
+                \item{Right click on the folder icon with project name next to it (top left of window).}
+                \item{Choose new $>>$ python file}
+                \item{Give your file a name e.g. week\_1\_exercises.py}
+            \end{itemize}
+    }        
+}%
+            
+\vspace{0.5em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Write and run code}
+        Type some code and click the green play arrow at the top to run.
+
+        \subsubsection*{Save your project}
+        File $>>$ Save all to save your wor
+    
+        \subsubsection*{Open a project you created previously}
+        Click File $>>$ Open $>>$ /home/{\bf UoB\_username}/PycharmProjects/{\bf your\_projectname}/venv, Open $>>$ New window 
+    }        
+}%
+
+
+\vspace{0.5em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Rules for naming variables}
+	\begin{itemize}
+            \item Variable names may contain letters or numbers
+            \item Variable names must begin with a letter
+            \item Variable names are case sensitive ({\tt time} is not the same as {\tt Time})		
+            \item Some {\tt keywords} are reserved by the Python language and cannot be used as variable names. For a full list of keywords reserved by Python, enter the following run the following comand in the editor you are using:
+            
+    		\vspace{0.5em}
+    		{\tt help("keywords")}
+    		\vspace{0.5em}
+    		
+    	\item{Use a consistent naming convention:
+            \begin{itemize}
+                \item {\tt snake\_case}: lower case letters, words separated by underscore ({\tt \_})
+                \item {\tt camel\_Case}: first letter of each word capitalised, excluding first word
+                \item {\tt Pascal\_Case}: first letter of each word capitalised
+            \end{itemize}
+            }
+    \end{itemize}
+    }        
+}%
+
+\vspace{0.5em}
+
+\begin{Exercise}[title=Conditional Statements]  \label{Ex:ControlFlow}
+    \Question{Create a variable, a, and assign it a string value. Use an {\tt if} statement to test if the final character of the string is the letter e}
+    \Question{Create a variable, b, and assign it a numerical value. Use an {\tt if...else} control structure that tests if the if the number is zero or non-zero and print a message to say which is the case.}
+    \Question{Write a program that outputs the name of the layer for a given depth from the earth's surface (Figure \ref{fig:earth_layers}). Assume the depth is always a non-negative value. Assume the depths given in the figure are within the shallowest of the two layers they divide. }
+    \Question{Create 3 variables, c, d, and e and assign each variable a floating point value. Write a program that tests if c divided by d is equal to e and outputs a message, {\tt'hello world'} if the outcome of the test is  {\tt True}. Test your program using the values c=0.3, d=0.1, e=3. Does it perform correctly?}\label{Q:floating_point_conditionals}
+    \Question{Expand your answer to Question \ref{Q:floating_point_conditionals} to test if c divided by d is i)greater than e, ii) equal to e or iii) less than e and print a message to indicate which is True}
+\end{Exercise}
+
+\begin{figure}[!h]
+        \centering
+        \includegraphics[height=7.5cm]{earth_layers}
+        \caption{Depth from the earth's surface to the approximate maximum depth of each of the earth's layers.}
+        \label{fig:earth_layers}
+\end{figure}
+
+
+\begin{Exercise}[title=Currency Trading]  
+    
+    A currency trader uses the following equation to calculate the amount in US dollars (USD) for the amount the customer pays in pounds sterling (GBP):
+    $$USD = GBP \times M \times R$$
+    where $R=1.38$ is the market rate and the multiplier, $M$ is found using the table below, based on the amount paid.:
+    
+    \begin{center}
+    \begin{tabular}{ |l|c| } 
+     \hline
+     GBP & Multiplier  \\ 
+     \hline
+     $<$ 50                   & 0.9  \\ 
+     $<$ 500 and \geq 50      & 0.92  \\ 
+     $<$ 5,000 and \geq 500   & 0.95  \\ 
+     $<$ 50,000 and \geq 5000 & 0.97  \\ 
+     \geq 50,000              & 0.98  \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+    
+    Write a program that prints the amount in US dollars for a given amount in pounds sterling, and the effective exchange rate for the conversion= $\frac{\mbox {USD}}{\mbox {GBP}}$
+
+\end{Exercise}
+
+\begin{Exercise}[title=Arithmetic 
+
+Comparison and Logical Operators] 
+    Create three variables c=1.1, d=3.2, e=4.3. Create a new float variable, f, with a value of your choice. Test if f + 1.1 is:
+    \begin{itemize}
+        \item less than c
+        \item greater than or equal to c but less than d
+        \item greater than or equal to d but greater than e
+        \item greater than or equal to e
+    \end{itemize}
+\end{Exercise}
+
+
+
+
+\begin{Exercise}[title=Nested conditionals]
+    \Question{Write a program that checks a number, x, and prints:
+    \begin{itemize}
+        \item `positive' if x is positive
+        \item `negative' if x is negative
+    \end{itemize}
+    If x is positive the program should {\bf also} print:
+    \begin{itemize}
+        \item `square' if x is a square number \\(a number of the form $x = n^2$ where $n$ is an integer)
+        \item  `not square' otherwise
+    \end{itemize}
+    }
+    \Question{Write a program that:
+    \begin{itemize}
+        \item checks if a number is odd or even.
+        \item if it is odd, checks if the number is a multiple of 3
+        \item if it is even, checks if the number is a multiple of 4
+    \end{itemize}
+
+\end{Exercise}
+
+\begin{figure}[!h]
+        \centering
+        \includegraphics[height=5cm]{circles}
+        \caption{Overlapping circles $C_1$, $C_2$ and $C_3$.}
+        \label{fig:circles}
+\end{figure}
+
+\begin{Exercise}[title=Putting it all together: Circles] 
+    
+    Suppose we have three circles in the $xy$-plane (Figure \ref{fig:circles}). 
+    
+    Circle $C_1$ is centred at $(0, 0)$ with radius of length 5. 
+    
+    Circle $C_2$ is centred at $(2, 1)$ and has radius of length 2. 
+    
+    Circle $C_3$ is centred at $(-5, 0)$ and has a radius of length 3. 
+    
+    %Using conditional statements
+    Write a program which takes in the variables {\tt x} and {\tt y} and tells the user which circle(s) the point $(x, y)$ is in. 
+    
+    Think about the order in which your program evaluates the expressions? Is this the most efficient way to structure the code? 
+    
+\end{Exercise}
+\end{document}

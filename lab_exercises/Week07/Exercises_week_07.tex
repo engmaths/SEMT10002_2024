@@ -1,0 +1,300 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header
+\documentclass[11pt]{report}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+%\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{nicefrac}
+\usepackage[lastexercise]{exercise}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+
+
+\usepackage{minted}
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+
+
+\setlength{\parindent}{0cm}
+
+\renewcommand{\ExerciseHeader}{\large\textbf{\ExerciseName~\ExerciseHeaderNB} - \textbf{\ExerciseTitle}\medskip}
+
+\renewcommand{\ExePartHeader}{\medskip\textbf{\ExePartName\ExePartHeaderNB\ExePartHeaderTitle\medskip}}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{EMAT10007 -- Introduction to Computer Programming}
+\subsection*{\Large Exercises -- Week 7. Functions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Getting Started: Pycharm IDE}
+        \subsubsection*{Open PyCharm on linux lab computers}
+            \begin{itemize}
+                \item{Scroll down to bring up log in screen and log in with your UoB user name and password.}
+                \item{Click activities (top left corner) to bring up the side panel.}
+                \item{Click the grid of 9 dots to bring up applications.}
+                \item{Choose JetBrains PyCharm}
+                \item{When prompted about the user agreement click accept and read}            
+            \end{itemize}
+    }        
+}%
+
+\vspace{0.5em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Create a new project and Python file}
+            \begin{itemize}
+                \item{Click New project or File $>>$ New project $>>$ Pure python}
+                \item{Unselect 'Create a main.py welcome script'}
+    	    \item{Note the file location:\\ /home/{\bf UoB\_username}/PycharmProjects/{\bf your\_projectname}/venv \\ where {\bf UoB\_username} is your UoB username and rename {\bf your\_projectname} to be a name of your choice e.g. EMAT10007\_exercises} 
+                \item{Right click on the folder icon with project name next to it (top left of window).}
+                \item{Choose new $>>$ python file}
+                \item{Give your file a name e.g. week\_1\_exercises.py}
+            \end{itemize}
+    }        
+}%
+            
+\vspace{0.5em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Write and run code}
+        Type some code and click the green play arrow at the top to run.
+
+        \subsubsection*{Save your project}
+        File $>>$ Save all to save your wor
+    
+        \subsubsection*{Open a project you created previously}
+        Click File $>>$ Open $>>$ /home/{\bf UoB\_username}/PycharmProjects/{\bf your\_projectname}/venv, Open $>>$ New window 
+    }        
+}%
+
+
+\vspace{0.5em}
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \subsection*{Rules for naming variables}
+	\begin{itemize}
+            \item Variable names may contain letters or numbers
+            \item Variable names must begin with a letter
+            \item Variable names are case sensitive ({\tt time} is not the same as {\tt Time})		
+            \item Some {\tt keywords} are reserved by the Python language and cannot be used as variable names. For a full list of keywords reserved by Python, enter the following run the following comand in the editor you are using:
+            
+    		\vspace{0.5em}
+    		{\tt help("keywords")}
+    		\vspace{0.5em}
+    		
+    	\item{Use a consistent naming convention:
+            \begin{itemize}
+                \item {\tt snake\_case}: lower case letters, words separated by underscore ({\tt \_})
+                \item {\tt camel\_Case}: first letter of each word capitalised, excluding first word
+                \item {\tt Pascal\_Case}: first letter of each word capitalised
+            \end{itemize}
+            }
+    \end{itemize}
+    }        
+}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Exercise}[title=Basics]
+
+  \Question{Write a function called \verb+print_name+ that prints your
+    name to the screen}
+
+  \Question{Write a function that defines $a = 1$ and $b = 2$ and then
+    prints the sum to the screen. Be sure to give your function a
+    sensible name.}
+
+  \Question{What would be wrong with defining a single function whose goal
+    is to add and multiply two numbers?}
+  
+      
+
+\end{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Exercise}[title=Functions with input and output]
+  \Question{Can you complete the \verb+compute_square+ function below by replacing the blank {\tt <?>} with the correct variable name?
+    
+      \vspace{1em}
+      \begin{minted}{python}
+        def compute_square(number):
+            # Returns the square
+            squared = <?> ** 2
+            return <?>
+    \end{minted}
+    \vspace{1em}
+    }
+    \Question{Use the \verb+compute_square+ function and a {\tt for} loop to print the squares of all integers from 1 to 10.}
+    \Question{Can you write a general function for raising numbers to powers? The function should take two arguments {\tt number} and {\tt power} and return the number raised to the given power. Remember to give your new function a sensible name.}
+    \Question{Use your new general function to print the powers of 2 up to $2^{10}$.}
+    \Question{Write a new function which has arguments {\tt number} and {\tt powers}. If I have inputs {\tt number=2} and {\tt powers=[1, 3, 4]}, the function should return the list {\tt [2, 8, 16]}. }
+
+    \Question{Write a function called {\tt inverse} that computes the
+      inverse of a number
+      $x$. That is, the function returns $1/x$ if $x \neq 0$.
+      If $x = 0$ then your
+      function should return the string ``undefined''. Show that
+      your function works by computing {\tt inverse(2)} and
+      {\tt inverse(0)}.}
+    
+    \Question{Write a function that swaps the values of two variables.
+      Make sure your function returns the new values.
+      Then,
+      create two variables {\tt a = ['red', 'blue', 'green']}
+      and {\tt b = (1, 3, 5)} and use your function to swap
+      their values.}
+
+\end{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Exercise}[title = Functional programming]
+
+  \Question{Create a Python file called shapes.py. Define a function
+    that computes the area of a rectangle. The values of the
+    width and height of the rectangle should be provided as arguments.
+    The area should be returned.}
+
+  \Question{Add more functions that compute (i) the area of a triangle
+    and (ii) the area of an ellipse.}
+
+  \Question{Add docstrings to each function to explain what they do.}
+
+  \Question{Use your code to compute the area of the house-like
+    shape that is obtained
+    by placing a triangle with a base of 3 and a height of 1 on top of a
+    rectangule of width 3 and height 2. \emph{Answer = 7.5}}
+
+\end{Exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Exercise}[title = Numerical integration]
+
+Calculating the area under a curve given by $y(x)$
+	is important for many engineering problems.  Calculus tells us
+	that the area $A$ under the curve $y(x)$ between the
+	points $x = a$ and $x = b$ is given by the integral
+	\begin{align}
+	A = \int_{a}^{b} y(x)\, dx.
+	\end{align}	
+	However, in real-world
+	engineering problems, the formulas for the curves are often so
+	complex that it is impossible to carry out the integration exactly.
+	Therefore, the area under the curve must be found approximately.
+	One way to approximate the area under the curve is by
+	the \href{https://en.wikipedia.org/wiki/Trapezoidal_rule}{trapezium rule}, 
+	which divides the area under a curve
+	into $N$ trapezoids.  
+	According to the trapezium rule, the area under the curve
+	can be approximated by the formula
+	\begin{align}
+	A \approx \frac{1}{2}[y(a) + y(b)] \Delta x + \sum_{i=1}^{N-1} y(x_i) \Delta x,
+	\end{align}	
+	where $\Delta x = (b - a) / N$ and $x_i = a + i \Delta x$.
+	
+	\Question{Write a Python program that uses the trapezium rule to calculate
+	the area under the curve $y = x^2$ between $x = 0$ and $x = 1$ by
+	setting $N = 1$, $N = 10$, and $N = 100$.  Use a Python function to
+	define the curve $y(x)$. 
+	In this case, the area can be
+	calculated exactly as $A = 1/3$.
+        Use this result to check that your code is
+	working correctly.
+        You should find that as $N$ increases, the value of $A$
+	calculated from the trapezium rule becomes more accurate.
+        \emph{Answers:} $A = 0.5$, $0.335$, and $0.33335$.}
+	
+	\Question{The density of a hot bar of length $L = 0.1$ m is given by
+	the function
+	\begin{align}
+	y(x) = \alpha e^{-x^2 / \beta^2},
+	\end{align}
+	where $x$ is a point in the bar,
+	 $\alpha = 2$ kg m$^{-1}$ and $\beta = 0.2$~m are constants.  
+	Assuming that $0 < x < L$, calculate
+	the mass of the bar.  Hint: the mass of the bar can be determined by
+	calculating the area under the curve from $x = 0$ to $x = L$. 
+	Use the code {\tt from math import *} to access the exponential
+	function. This code should be added at the top of your Python file.
+        The exponential of a variable {\tt x} can be computed
+	using the code {\tt exp(x)}. \emph{Answer: when $N = 1000$
+          the area is $A \simeq 0.184512396$ (which has units of kg).}}
+	
+	
+	\Question{Write a Python function that calculates the area under any
+	curve $y(x)$ between $x = a$ and $x = b$ using the trapezium rule.
+	Hint: functions can be passed to other functions as arguments.}
+	
+	
+\end{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{Exercise}[title = Advanced questions]
+
+  \Question{Write a function that computes the median of three distinct numbers that are provided by the user.  Recall that the median is the number in the middle; it's neither the largest nor the smallest.  For example, the median of 4, 1, and 2 is 2.}
+
+  \Question{Write a function called {\tt sum\_digits} that computes the sum of the digits of an integer. For example {\tt sum\_digits(1234) = 1 + 2 + 3 + 4 = 10}.  There are several ways of doing this; however, if you want a challenge, try to do this using only mathematical operations.}
+  
+  
+  \Question{Write a function which returns the prime factorization of a number.
+    \textbf{Note:} Learn about prime factorization here: \url{https://www.mathsisfun.com/prime-factorization.html}}
+  
+  \end{Exercise}
+
+%\begin{Exercise}[title=Word Scrambler]
+%
+%    An old internet meme once claimed that if you scrambled the words of a sentence in such a way that the first and last letters remained in place, but the rest of the letters were shuffled, it could still be understood. The following sentence was used to promote the  claim:\\
+%
+%\emph{``Aoccdrnig to a rscheearch at Cmabrigde Uinervtisy, it deosn't mttaer in waht oredr the ltteers in a wrod are, the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae. The rset can be a toatl mses and you can sitll raed it wouthit porbelm. Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe.''}\\
+%
+%It was later proven incorrect; however, it makes for an interesting programming exercise! \\
+%
+%How would we write a program which reads in a phrase and prints out the scrambled words? Let's break it down into steps.\\
+%
+%    \Question{First let's just consider how would we completely scramble a single word? For example, {\tt "scramble"} could become {\tt "lbeacmrs"} or {\tt "toblerone"} could become {\tt "loonberet"}.
+%    
+%    \textbf{Hint:} Recall the {\tt shuffle} function in the {\tt random} module. However, be aware that {\tt shuffle} rearranges elements in place and so cannot work on strings - you will need to convert to a list.
+%    }
+%    \Question{So now we can scramble the entire word - how would you adapt this to keep the first and last letters in place? For example, {\tt "scramble"} could become {\tt "smlabcre"} or {\tt "toblerone"} could become {\tt "tnobleroe"}.}
+%    \Question{Now rewrite this as a function called {\tt WordScrambler} which takes in an argument {\tt Word}.}
+%    \Question{Almost there - can you apply your function to every word in a list of words? For example, the list {\tt ["scramble", "toblerone", "smell", "cheese"]}?}
+%    \Question{Finally, rather than have a list of words it'd be nicer to read in a sentence from the user using {\tt input()} and print out the scrambled sentence. How would you do this?
+%    }
+%    \Question{(Advanced) Enhance your word scrambler. Some ideas include:
+%    \begin{itemize}
+%        \item Leave punctuation and numbers unchanged.
+%        \item Add a flag to the function which switches functionality between scrambling the entire word and leaving the first and last letters in place.
+%        \item How would you create a scrambler which only scrambles the position of every other letter?
+%    \end{itemize}}
+%\end{Exercise}
+
+
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+
+\end{document}

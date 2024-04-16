@@ -1,0 +1,132 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amsfonts}
+
+\begin{document}
+
+\begin{center}
+\textbf{EMAT10007 Introduction to Computer Programming \\[0.25em]
+Week 09 -- Consolidation Exercise}
+\end{center}
+
+\subsubsection*{Problem statement}
+In this exercise, you will use Python to simulate how a 
+grain of sand sinks in water under gravity.  
+Due to the smallness of the grain, its motion is affected by 
+random collisions with water molecules.  
+
+\subsubsection*{Requirements and tips}
+Your code should be contained in a single Python (.py) file.  
+When designing your code, you should think about:
+\begin{itemize}
+\item{Whether the data types you are using are appropriate and optimal.}
+\item{Using if/else/elif statements to control the flow of your code.}
+\item{Using loops to carry out repetitive tasks rather than copying-and-pasting code.}
+\item{Using functions to break your code into smaller
+modules and eliminate code repetition.}
+\item{The guidelines on functional programming.}
+\item{Giving variables and functions concise and descriptive names.}
+\item{Documenting your code so that it is easy to understand how it works.}
+\item{Ensuring plots are easy to read and contain all of the necessary information.}
+\end{itemize}
+A solution to the consolidation exercises will be made available on Friday at 5 pm.  
+
+
+\subsubsection*{Exercises}
+
+\begin{enumerate}
+
+\item{The radius
+and density of the grain can be found in the file
+{\tt grain.csv}.  Import this data into Python to
+compute the mass of the grain.  The mass can be
+computed using the equation
+\begin{align}
+m = \frac{4}{3} \rho R^3
+\end{align}
+where $\rho$ is the density in units of kg/m$^3$
+and $R$ is the radius in units of m.} 
+
+\item{The motion of the sand grain will be calculated by
+first dividing
+time into $N$ equally spaced points starting at $t = 0$ and ending at
+$t = t_\text{end}$.  If $\Delta t = t_\text{end} / (N-1)$ represents the
+spacing between grid points, then we can write any time point
+$t_n$ as $t_n = n \Delta t$, where $n = 0, 1, \ldots, N-1$.  
+Assuming that
+$N = 1000$ and $t_\text{end} = 10^{-3}$ s, 
+compute the times $t_n$
+and store them in a suitable data structure.}
+
+\item{At each time point $t_n$, the force which acts on the grain
+must be calculated.  The total vertical force acting on the
+grain at any time is given by
+\begin{align}
+F = m g + c \label{eqn:Fz}
+\end{align}
+where $m$ is the mass of the grain (calculated in Question 1), 
+$g = 9.8$ m/s 
+is the gravitational acceleration,
+and $c$ is a collision force from the water molecules.  
+The collision force at any time point $t_n$
+can be set equal to a random number between 
+$-2 \times 10^{-4}$ and $2 \times 10^{-4}$.
+Calculate the total vertical force at all of the time points $t_n$;
+note that the collision force should be different random number at
+each time point.
+\textbf{Hint}: You will need to import the {\tt random} package by
+adding the code {\tt import random} to the top of your Python file.
+A random number between $0$ and $1$ can be generated using the
+command {\tt random.random()}.}
+
+
+\item{Now that the force acting on the grain is known,
+the vertical speed $v$ can be calculated by applying Newton's laws of
+motion.  
+Let $v_n$ denote the downwards speed of the sand grain at time
+$t_n$.  Then, the speed 
+of the sand grain at time $t_{n+1} = t_n + \Delta t$ is given by
+\begin{align}
+v_{n+1} = v_{n} + \frac{F \Delta t}{m}, \label{eqn:v}
+\end{align}
+where $F$ is the force at time $t_n$ that was calculated in
+Question 3.  Compute $v_n$ at each time point  $t_n$ up to and including
+$t_{N-1} = t_\text{end} = 10^{-3}$~s.  You can assume that the initial speed of the grain
+is zero, that is, $v_0 = 0$ m/s.  Plot the velocity as a function of time.
+Save this figure as \verb+question4.png+. Ensure that your figure
+is appropriately labelled.}
+
+\item{Due to the randomness in the model, each time you run your code,
+you will see a different result.  However, the average results should
+be more or less the same.  You will now extend your code to
+calculate the average speed $V$.  
+To determine the average speed $V$,  you must repeatedly calculate the 
+speed $v$ and then average the results.
+
+Run 5 simulations by 
+generating new forces $F$ at each time point $t_n$ using Equation
+\eqref{eqn:Fz} and calculate new speeds using Equation \eqref{eqn:v}.  
+Then, for each time $t_n$,
+compute the average speed $V_n$ by averaging over the 5 values
+of $v_n$ that are obtained from your 5 simulations.  
+Create a new figure and 
+plot all 5 velocities $v$ and 
+the average speed $V$ as a function of time on the same figure.}
+
+\item{If there were no collisions, then the speed of the grain should obey
+the equation
+\begin{align}
+v_e(t) = g t.
+\label{eqn:v_exact}
+\end{align}
+The mean speed $V$ should converge to the
+speed $v_e$ predicted by \eqref{eqn:v_exact} as more and more 
+simulations are used to compute the mean.  Compute the
+mean speed $V$ using $20$, $40$, and $80$ simulations.
+Plot all of the average speeds along with the $v_e$ in
+a new figure.}
+
+\end{enumerate}
+
+\end{document}

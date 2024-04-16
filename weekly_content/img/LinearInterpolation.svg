@@ -1,0 +1,22 @@
+<svg version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="150px" height="150px" viewBox="-7 -60 67 67" >
+<title>Linear Interpolation</title>
+<g fill="none">
+	<path d="M0,-15h20v15 M0,-45h50v45" stroke="#999" stroke-width=".5"/>
+	<path d="M0,-30h35v30" stroke-dasharray="2" stroke="#777" stroke-width=".5"/>
+	<path d="M0,-60v60h60" stroke="black"/>
+	<path d="M20,-15 l30,-30" stroke="blue"/>
+</g>
+<circle id="pt" cx="20" cy="-15" r="1.5" fill="red"/>
+<use xlink:href="#pt" x="30" y="-30"/>
+<use xlink:href="#pt" x="15" y="-15" fill="blue"/>
+<g stroke="none" fill="black" font-size="6" font-family="New Century Schoolbook">
+	<text x="18" y="5"><tspan font-style="italic">x</tspan><tspan dy="1" font-size="3.5">0</tspan></text>
+	<text x="48" y="5"><tspan font-style="italic">x</tspan><tspan dy="1" font-size="3.5">1</tspan></text>
+	<text x="-6" y="-13"><tspan font-style="italic">y</tspan><tspan dy="1" font-size="3.5">0</tspan></text>
+	<text x="-6" y="-43"><tspan font-style="italic">y</tspan><tspan dy="1" font-size="3.5">1</tspan></text>
+	<text x="37" y="-27" font-style="italic" fill="blue" font-size="5">(x,y)</text>
+</g>
+</svg>

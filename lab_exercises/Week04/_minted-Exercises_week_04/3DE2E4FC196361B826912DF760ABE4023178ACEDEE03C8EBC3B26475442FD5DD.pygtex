@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{def} \PYG{n+nf}{F}\PYG{p}{():}
+        \PYG{n}{T} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}I am a variable\PYGZdq{}}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{T}\PYG{p}{)}
+
+    \PYG{n}{F}\PYG{p}{()}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{T}\PYG{p}{)}
+\end{Verbatim}

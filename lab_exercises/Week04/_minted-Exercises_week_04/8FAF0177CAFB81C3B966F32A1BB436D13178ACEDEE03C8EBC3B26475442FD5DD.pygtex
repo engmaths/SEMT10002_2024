@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{k}{def} \PYG{n+nf}{F}\PYG{p}{():}
+      \PYG{n}{S} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Me too\PYGZdq{}}
+      \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{S}\PYG{p}{)}
+
+  \PYG{n}{S} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}I hate spam\PYGZdq{}}
+  \PYG{n}{F}\PYG{p}{()}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{S}\PYG{p}{)}
+\end{Verbatim}
