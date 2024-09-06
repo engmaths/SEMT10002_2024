@@ -1,8 +1,0 @@
-[
-    {"sensor_id": "sensor_1", "timestamp": "2023-09-01T10:00:00Z", "temperature": 22.5},
-    {"sensor_id": "sensor_2", "timestamp": "2023-09-01T10:05:00Z", "temperature": 24.0},
-    {"sensor_id": "sensor_1", "timestamp": "2023-09-01T10:10:00Z", "temperature": 23.5},
-    {"sensor_id": "sensor_2", "timestamp": "2023-09-01T10:15:00Z", "temperature": 25.0},
-    {"sensor_id": "sensor_1", "timestamp": "2023-09-01T10:20:00Z", "temperature": 24.5},
-    {"sensor_id": "sensor_2", "timestamp": "2023-09-01T10:25:00Z", "temperature": 23.0}
-]
