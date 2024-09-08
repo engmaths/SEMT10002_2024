@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>Week_08_1-Importing_files slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>Week_01_2-Integers_Floating_Point slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7434,508 +7434,891 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16c271fd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Computer-Programming-and-Algorithms">Computer Programming and Algorithms<a class="anchor-link" href="#Computer-Programming-and-Algorithms">¶</a></h1><h2 id="Week-8.1:-Importing-Files">Week 8.1: Importing Files<a class="anchor-link" href="#Week-8.1:-Importing-Files">¶</a></h2><img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/full-colour-logo-UoB.png?raw=true" width="20%"/>
+<h1 id="Computer-Programming-and-Algorithms">Computer Programming and Algorithms<a class="anchor-link" href="#Computer-Programming-and-Algorithms">¶</a></h1><h2 id="Week-1.2:-Variable-Types---Integers-and-Floating-Point">Week 1.2: Variable Types - Integers and Floating Point<a class="anchor-link" href="#Week-1.2:-Variable-Types---Integers-and-Floating-Point">¶</a></h2><img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/full-colour-logo-UoB.png?raw=true" width="20%"/>
 
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4dc545c5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Aims">Aims<a class="anchor-link" href="#Aims">¶</a></h1><p>In this video we will learn:</p>
-<ul>
-<li>What is a file?</li>
-<li>What is a file path?</li>
-<li>How to open a file using a computer program</li>
-</ul>
+<h1 id="Integer-(int)">Integer (<code>int</code>)<a class="anchor-link" href="#Integer-(int)">¶</a></h1><p>A whole number, with no decimal place</p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fcbe3bea">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="What-is-a-file?">What is a file?<a class="anchor-link" href="#What-is-a-file?">¶</a></h1><p>A file is a set of bytes (a unit of data that is eight binary digits long) used to store data.</p>
-<p>What the data represents depend on the file type which is represented by the file extension.</p>
-<p>Examples of file types and file extensions (there are hundereds more):</p>
-<ul>
-<li>unformatted text (.txt, .dat)</li>
-<li>formatted text (.docx)</li>
-<li>spreadsheet/tabulated data (.xlsx, .csv)</li>
-<li>image (.png, .img)</li>
-</ul>
-<p><strong>TODO: table showing this type of data</strong></p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="What-is-a-File-Path?">What is a File Path?<a class="anchor-link" href="#What-is-a-File-Path?">¶</a></h1><p>The file path is a string object that represents the location of a file on an operating system.</p>
-<p>This may include it's location within a series of nested folders.</p>
-<p>We will refer to folders as <strong>directories</strong>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="What-is-a-File-Path?">What is a File Path?<a class="anchor-link" href="#What-is-a-File-Path?">¶</a></h1><p>A file path has three parts:</p>
-<ol>
-<li><span style="color:blue"><strong>Directory Path</strong></span>: the location of the directory on the file system that contains the file. Nested directories are separated by a:<ul>
-<li>forward slash <code>/</code> (Unix)</li>
-<li>backslash <code>\</code> (Windows)</li>
-</ul>
-</li>
-<li><span style="color:red"><strong>File Name</strong></span>: the name of the file</li>
-<li><span style="color:green"><strong>File Extension</strong></span>: the end of the file path pre-pended with a period (.) used to indicate the file type</li>
-</ol>
-<hr/>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Examples: <br/>File Path to myfile.txt from the root (top-most) directory of the file system.</p>
-<p>'<span style="color:blue">C:\Users\YourUsername\Documents\ </span><span style="color:red">myfile</span><span style="color:green">.txt</span>'
-<br/><span style="color:black">(Windows)</span></p>
-<p>'<span style="color:blue">/home/YourUsername/Documents/</span><span style="color:red">myfile</span><span style="color:green">.txt</span>'
-<br/><span style="color:black">(Unix)</span></p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The <strong>root directory</strong> is the (top-most) directory of the file system.</p>
-<p><strong>Windows</strong>: <br/>Each drive has its own root directory:</p>
-<ul>
-<li><code>C:\</code> is the root directory of the C: drive.</li>
-<li><code>D:\</code> is the root directory of the D: drive.</li>
-</ul>
-<p><strong>Linux/Unix/Mac</strong>: <br/>There is a single root directory for the entire file system, denoted by a forward slash <code>/</code>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The path can be either:</p>
-<ul>
-<li><strong>Global (Absolute):</strong> The path to a file from the root directory of the file system.</li>
-<li><strong>Local (Relative):</strong> The path to a file relative to the current <em>working directory</em> (the directory where the program is being run)</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Consider the file system below.</p>
-<div class="highlight"><pre><span></span><span class="n">YourUsername</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Documents</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">README</span><span class="o">.</span><span class="n">txt</span>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
-<p>We are going to run the programme <code>main.py</code> which will use the file path to <code>README.txt</code></p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>int</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=acc947c4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="n">YourUsername</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Documents</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">README</span><span class="o">.</span><span class="n">txt</span>
+<p>The function <code>type()</code> outputs the type of the object entered between the parentheses <code>(...)</code></p>
+<p>The function <code>print()</code> displays the value entered between the parentheses <code>(...)</code></p>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bdfd35fd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1
+&lt;class 'int'&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bdfe0312">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Floating-point-(float)">Floating point (<code>float</code>)<a class="anchor-link" href="#Floating-point-(float)">¶</a></h1><p>A fractional number or a decimal number (consisting of a whole and a fractional part)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0a697789">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>float</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dd67d0fc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1.0
+&lt;class 'float'&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1adc563">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Numerical-value-storage">Numerical value storage<a class="anchor-link" href="#Numerical-value-storage">¶</a></h1><h3 id="Decimal-numbers">Decimal numbers<a class="anchor-link" href="#Decimal-numbers">¶</a></h3><p>In daily life we mostly use the <strong>decimal</strong> or <strong>base-10</strong> number system.</p>
+<p>Each number is formed by finding the sum of base-10 numbers, each multiplied by a factor (0-9).</p>
+<p>Consider the number 104.02</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Unit</strong></th>
+<th style="text-align:left">$10^2$</th>
+<th style="text-align:left">$10^1$</th>
+<th style="text-align:left">$10^0$</th>
+<th style="text-align:left">$10^{-1}$</th>
+<th style="text-align:left">$10^{-2}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Value</strong></td>
+<td style="text-align:left">100</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0.1</td>
+<td style="text-align:left">0.01</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Factor</strong></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Total</strong></td>
+<td style="text-align:left">100</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0.02</td>
+</tr>
+</tbody>
+</table>
+<p>Sum of columns = 100 + 4 + 0.02 = 104.02</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9db1a313">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Binary-numbers">Binary numbers<a class="anchor-link" href="#Binary-numbers">¶</a></h3><p>Numbers are stored on a computer as <strong>binary</strong> or <strong>base-2</strong> numbers.</p>
+<p>Each number is formed by finding sum of base-2 numbers, each multiplied by a factor <strong>1 or 0</strong>.</p>
+<p>The factors are like "on" (1) and "off" (0) switches for the different columns</p>
+<p>Consider the number 25</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Unit</strong></th>
+<th style="text-align:left">$2^4$</th>
+<th style="text-align:left">$2^3$</th>
+<th style="text-align:left">$2^2$</th>
+<th style="text-align:left">$2^1$</th>
+<th style="text-align:left">$2^0$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Value</strong></td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Factor</strong></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Total</strong></td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<p>Sum of columns = 16 + 8 + 1 = 25</p>
+<p>Any whole number can be represented by 1s and 0s providing we have enough columns (binary digits).</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=606dd324-adbb-4370-9794-ee20a8f00bf7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Computers store data by representing values as binary numbers</p>
+<p>A bit (short for 'binary digit') is the smallest unit of data that a computer can store</p>
+<p>A bit can have one of two possible values: 0 or 1.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9dfe2734">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Integer-storage-on-a-computer">Integer storage on a computer<a class="anchor-link" href="#Integer-storage-on-a-computer">¶</a></h1><p>Itegers are stored as <strong>signed</strong> binary numbers.</p>
+<p><strong>Signed</strong> means we can store both negative and positive values.</p>
+<p>For a given number of bits, the most significent bit (m.s.b) is negative.</p>
+<p>Consider the number - 10, represented using 5 columns (bits)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Unit</strong></th>
+<th style="text-align:left">$-2^4$</th>
+<th style="text-align:left">$2^3$</th>
+<th style="text-align:left">$2^2$</th>
+<th style="text-align:left">$2^1$</th>
+<th style="text-align:left">$2^0$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Value</strong></td>
+<td style="text-align:left">- 16</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Factor</strong></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Total</strong></td>
+<td style="text-align:left">-16</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<p>Sum of columns (bits) = -16 + 4 + 2 = -10</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ec2c4b68">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Any integer (whole number) can be represented in binary form (if we have enough bits).</p>
+<p>The Python programming language does not place a limit on the number of bits that can be used to store an <strong>integer</strong>.</p>
+<p>The upper limit on available bits to store an integer is determined by the amount of memory a computer system has.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a05ffd7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Fractional-number-storage-on-a-computer">Fractional number storage on a computer<a class="anchor-link" href="#Fractional-number-storage-on-a-computer">¶</a></h1><p>To store fractional decimal numbers in binary, base-2 numbers with <strong>negative exponents</strong> are used.</p>
+<p>Consider the number 4.5</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">$2^2$</th>
+<th style="text-align:left">$2^1$</th>
+<th style="text-align:left">$2^0$</th>
+<th style="text-align:left">$2^{-1}$</th>
+<th style="text-align:left">$2^{-2}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Value</strong></td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0.5</td>
+<td style="text-align:left">0.25</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Factor</strong></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Total</strong></td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0.5</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<p>We can represent 4.5 exactly using the 5 columns shown here (5 bits).
+<br/>Sum of columns = 4 + 0.5 = 4.5</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fa66deb5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now consider the number 4.125</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">$2^2$</th>
+<th style="text-align:left">$2^1$</th>
+<th style="text-align:left">$2^0$</th>
+<th style="text-align:left">$2^{-1}$</th>
+<th style="text-align:left">$2^{-2}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Value</strong></td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0.5</td>
+<td style="text-align:left">0.25</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Factor</strong></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Total</strong></td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0.25</td>
+</tr>
+</tbody>
+</table>
+<p>We <em>can't</em> represent 4.125 exactly using 5 columns (5 bits)</p>
+<p>Closest estimate: 4.25 (shown in the table) or 4
+<br/>(each result contains an error of 0.125)</p>
+<p>If we had an extra column (bit), $2^{-3}$ (0.125), we could represent the number exactly.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=76e9b7f0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The Python programming language does not place a limit on the number of bits that can be used to store an <strong>integer</strong>.</p>
+<p>However, in Python (and many other programming languages) <strong>fractional numbers</strong> are stored on a computer using a fixed number of 64 bits</p>
+<p>This means we must use a <em>finite</em> number of bits to try and represent an <em>infinite</em> amount of numbers.</p>
+<p>Therefore many fractional numbers can’t be represented exactly when stored in binary form.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab5e5ea0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Floating-point-numbers">Floating point numbers<a class="anchor-link" href="#Floating-point-numbers">¶</a></h1><p><strong>Fixed point</strong> number storage:</p>
+<ul>
+<li>Represent fractional numbers in computer systems where the number of bits after the decimal point is fixed.</li>
+</ul>
+<p><strong>Floating point</strong> number storage:</p>
+<ul>
+<li>Allows a greater range of fractional numbers to be stored using a fixed number of bits, compared to fixed point number storage</li>
+<li>To understand floating point numbers, let's first consider <em>scientific notation</em> for decimal (base-10) values...</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b996d949">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Scientific-notation-for-decimal-numbers">Scientific notation for decimal numbers<a class="anchor-link" href="#Scientific-notation-for-decimal-numbers">¶</a></h1><p>The <strong>mantissa</strong> controls the <em>precision</em> of a number.
+<br/>(A <em>fixed point</em> number, normalised so that a maximum of 1 significant figure (s.f.) is to the left of the decimal point)</p>
+<p>The <strong>exponent</strong> controls the <em>order of magnitude</em> of the number.
+<br/>This allows the decimal point to <em>float</em>, allowing a greater range of values to be represented than using the mantissa alone.</p>
+<p>$$
+\boxed{\underbrace{M}_{mantissa} \times \underbrace{10}_{base}\overbrace{^E}^{exponent}}
+$$</p>
+<p>$$ 1.234 \times 10^0 = 1.234 $$
+$$ 1.234 \times 10^1 = 12.34 $$
+$$ 1.234 \times 10^2 = 123.4 $$</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f6e2128">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/denary_float_c.png?raw=true" width="75%"/>
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/denary_float_b.png?raw=true" width="75%"/>
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/denary_float_a.png?raw=true" width="75%"/>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a56aabcf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Consider what happens if we limit the number of bits in the mantissa (e.g. 4 bits, positive values) and the number of bits in the exponent (e.g. 1 bit).</p>
+<p>$$
+\boxed{\underbrace{M}_{mantissa} \times \underbrace{10}_{base}\overbrace{^E}^{exponent}}
+$$</p>
+<p>The limitation means there are some numbers we can't represent</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bfaf2981">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Examples</strong>: Not enough bits in the mantissa and/or the exponent to represent the number.</p>
+<p>$1.5 \times 10$ $\color{red}{^{12}}$           (Exponent can't be represented using 1 bit)</p>
+<p>$ \color{red}{2.3456}$                 (Mantissa can't be represented using 4 bits)</p>
+<p>$ \color{red}{123.45678}$             (Mantissa can't be represented using 4 bits)</p>
+<p>$1 \times 10$  $\color{red}{^{-4}}$  (or $\color{red}{0.0001}$)      (Exponent can't be represented using 1 bit / mantissa can't be represented using 4 bits)</p>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2309dbf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Floating-point-binary-numbers">Floating point binary numbers<a class="anchor-link" href="#Floating-point-binary-numbers">¶</a></h1><p>Binary <strong>floating point</strong> number storage is similar to <em>scientific notation</em> for decimal (base-10) values, but with:</p>
+<ul>
+<li>a <em>binary</em> <strong>mantissa</strong> (normalised so that a maximum of 1 significant figure (s.f.) is to the left of the decimal point)</li>
+<li>a <em>binary</em> <strong>exponent</strong> (with no decimal point)</li>
+<li>a <strong>base</strong> of 2</li>
+</ul>
+<p>$$
+\boxed{\underbrace{M}_{mantissa} \times \underbrace{2}_{base}\overbrace{^E}^{exponent}}
+$$</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5cdfec03">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/binary_float_b.png?raw=true" width="75%"/>
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/binary_float_a.png?raw=true" width="75%"/>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8540a3d3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Consider what happens if we limit the number of bits in the mantissa (e.g. 4 bits) and the number of bits in the exponent (e.g. 4 bits).</p>
+<p>$$
+\boxed{\underbrace{M}_{mantissa} \times \underbrace{2}_{base}\overbrace{^E}^{exponent}}
+$$</p>
+<p>The limitation means there are some numbers we can't represent</p>
 <hr/>
-<p><strong>Global path</strong> (from root directory to temperature.csv)
-<br/>Assume the directory <code>YourUsername</code> is on the root directory, in a directory called <code>Users</code> (Windows) or <code>home</code> (Unix)</p>
-<pre><code>'C:\Users\YourUsername\Documents\README.txt'
+<p><strong>Example</strong>:It is not possible to represent the mantissa $-\frac{1}{16}$ with 4 bits</p>
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/SEMT10002_2024/blob/main/img/impossible_mantissa.png?raw=true" width="50%"/>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2be43fd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Example</strong>:It is not possible to represent the exponent $-15$ with 4 bits</p>
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/SEMT10002_2024/blob/main/img/impossible_exponent.png?raw=true" width="50%"/>
+<p>(Note, if the first bit was $-16$ (shaded orange), the second bit would be $8$ not $-8$)</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c738e2aa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Floating-point-error">Floating point error<a class="anchor-link" href="#Floating-point-error">¶</a></h1><p>When a fractional number is stored on a computer, a binary floating number is used to represent the value.</p>
+<p>There may not be enough bits in the mantissa and/or the exponent to represent the number exactly.</p>
+<p>In Python (and many other programming languages) <strong>fractional numbers</strong> are stored on a computer using a fixed number of 64 bits <br/>(53 bit mantissa, 11 bit exponent)</p>
+<p>This limited number of bits can lead to a small error in the stored representation of a floating point number.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0751632b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>When the function <code>print()</code> displays a value, the number of significant figures to which the stored value is rounded before being displayed is set automatically.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6eddbd28">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a32efe35-5b11-4ed6-be3a-b27a91143f1f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Remember, the <strong>mantissa</strong> controls the <em>precision</em> of a number.</p>
+<p>If we have 53 bits to store the mantissa, the computer can store the decimal representation of the number precise to 15 significant figures (s.f.)</p>
+<p>(An equation showing how to estimate this decimal precision from 53 bit binary binary precision is given at the end of the notebook file)</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb287072-6604-4ea1-9b0e-733e5cf080f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To check if the number contains floating point error, display the number to <strong>more than</strong> 15 decimal places (d.p.)...</p>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e89b35a9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The Python function <code>format()</code> displays the first value within the parentheses formatted using the second value within the parentheses.</p>
+<p><code>'.15f'</code>: displays a floating point number (<code>f</code>) to 15 d.p.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0167f455-d2cf-4435-a5d5-1e5104353962">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [133]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'.15f'</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[133]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'0.100000000000000'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aab5e391-065f-48eb-877b-851300c32e8c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><code>'.17f'</code>: displays a floating point number (<code>f</code>) to 17 d.p.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3d53c023">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">format</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">'.17f'</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[147]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'0.10000000000000001'</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6fcb440a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We can see that the stored value of <code>0.1</code> contains floating point error.</p>
+<p>The error is small (in the order of $10^{-17}$ in this example).</p>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=91bebb8c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 
-'/home/YourUsername/Documents/README.txt'
-</code></pre>
-<hr/>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Local path</strong> (from main.py to README.txt)</p>
-<pre><code>'README.txt'
-</code></pre>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Consider the file system below.</p>
-<div class="highlight"><pre><span></span><span class="n">YourUsername</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Documents</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">README</span><span class="o">.</span><span class="n">txt</span> 
-        <span class="o">|---</span> <span class="n">data</span><span class="o">/</span> 
-               <span class="o">|</span>
-               <span class="o">|---</span> <span class="n">temperature</span><span class="o">.</span><span class="n">csv</span>
+<span class="nb">format</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">'.17f'</span><span class="p">)</span>
 </pre></div>
-<p>We are going to run the programme <code>main.py</code> which will use the file path to <code>temperature.csv</code>, which is in subdirectory <code>data</code></p>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.2
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'0.20000000000000001'</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7a8952aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="n">YourUsername</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Documents</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">README</span><span class="o">.</span><span class="n">txt</span> 
-        <span class="o">|---</span> <span class="n">data</span><span class="o">/</span> 
-               <span class="o">|</span>
-               <span class="o">|---</span> <span class="n">temperature</span><span class="o">.</span><span class="n">csv</span>
-</pre></div>
-<hr/>
-<p><strong>Global path</strong> (from root to temperature.csv)
-<br/>Assume the directory <code>YourUsername</code> is on the root directory, in directory called <code>Users</code> (Windows) or <code>home</code> (Unix)</p>
-<pre><code>'C:\Users\YourUsername\Documents\data\temperature.csv'
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 
-'/home/YourUsername/Documents/data/temperature.csv'
-</code></pre>
-<hr/>
-<p><strong>Local path</strong> (main.py to temperature.csv)</p>
-<pre><code>'data/temperature.csv'
-</code></pre>
+<span class="nb">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'.17f'</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.3333333333333333
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'0.33333333333333331'</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c62aa9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In the following examples we will us the <strong>local path</strong>, not the <strong>global path</strong>:</p>
-<ul>
-<li>shorter</li>
-<li>unchanged by location of files on file system, providing their location relative to each other doesn't change</li>
+<p>For many operations this error is negligably small.</p>
+<p>However for certain operations such as comparing two numbers to see if they are identical, it can cause issues.</p>
+<p>We will learn more about this later on the unit.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bfdd1d5c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h1><ul>
+<li>Integers and decimal (floating point) numbers are stored as binary numbers on a computer</li>
+<li>Floating point number storage allows a greater range of decimal numbers to be stored than fixed point number storage</li>
+<li>The limited number of bits used to store floating point numbers can introduces <strong>floating point error</strong> to the stored value of a number</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7dccb5e7-f65a-474d-a04e-b6c2d02b6bcd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We will use the notation for Unix systems (forward slash <code>/</code>) so remember to chage this to backslash <code>\</code> if you are using windows</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-open-a-file-using-a-computer-program">How to open a file using a computer program<a class="anchor-link" href="#How-to-open-a-file-using-a-computer-program">¶</a></h1>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h1><p>Consider the file system below</p>
-<div class="highlight"><pre><span></span><span class="n">Week_8</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Example_1</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">program_1</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">README</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We can open the file <code>README.txt</code> in <code>program_1.py</code> using:</p>
-<div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'README.txt'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Before the program exits, the file must be closed:</p>
-<div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h1><p>Consider the file system below</p>
-<div class="highlight"><pre><span></span><span class="n">Week_8</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Example_2</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">program_2</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">README</span><span class="o">.</span><span class="n">txt</span> 
-        <span class="o">|---</span> <span class="n">data</span><span class="o">/</span> 
-               <span class="o">|</span>
-               <span class="o">|---</span> <span class="n">temperature</span><span class="o">.</span><span class="n">csv</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We can open the file <code>temperature.csv</code> using <code>program_2.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data/temperature.csv'</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-<p>The file is then closed</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Downstream-and-Upstream-files">Downstream and Upstream files<a class="anchor-link" href="#Downstream-and-Upstream-files">¶</a></h1><p><strong>Downstream files</strong>: Files that exist in the same directory as the current working directory, or any of its subdirectories</p>
-<p><strong>Upstream files</strong>: Files that exist in a higher level folder than your current working directory</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Import path:</strong>
-The directories from which a file can be read by a program.</p>
-<ul>
-<li><em>Includes</em> downstream directories</li>
-<li><em>Excludes</em> upstream directories by default</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We can add an upstream directory by including:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'../'</span><span class="p">)</span>
-</pre></div>
-<p>at the start of a program.</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>One directory upstream is denoted by <code>../</code></p>
-<p>Two directories upstream is denoted by <code>../../</code></p>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Example">Example<a class="anchor-link" href="#Example">¶</a></h1><p>Consider the file system below</p>
-<div class="highlight"><pre><span></span><span class="n">Week_8</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Example_3</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">rainfall</span><span class="o">.</span><span class="n">csv</span>
-        <span class="o">|---</span> <span class="n">my_program</span><span class="o">/</span> 
-               <span class="o">|</span>
-               <span class="o">|---</span> <span class="n">program_3</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-<p>The file <code>rainfall.csv</code> is <em>upstream</em> of the file (<code>program_3.py</code>)</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We can open the file <code>rainfall.csv</code> using <code>program_3.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'../'</span><span class="p">)</span>
-<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'rainfall.csv'</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The same process can be used to access directories that are:</p>
-<ul>
-<li>downstream of an upstream directory</li>
-<li>but not downstream of the current working directory</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="n">Week_8</span><span class="o">/</span>
-<span class="o">|</span>
-<span class="o">|---</span> <span class="n">Example_4</span><span class="o">/</span>
-        <span class="o">|</span>
-        <span class="o">|---</span> <span class="n">my_program</span><span class="o">/</span> 
-               <span class="o">|</span>
-               <span class="o">|---</span> <span class="n">program_4</span><span class="o">.</span><span class="n">py</span>
-        <span class="o">|---</span> <span class="n">my_data</span><span class="o">/</span> 
-               <span class="o">|</span>
-               <span class="o">|---</span> <span class="n">wind_speed</span><span class="o">.</span><span class="n">csv</span>
-</pre></div>
-<p>We can open the file <code>wind_speed.csv</code> using <code>programme_4.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'../my_data'</span><span class="p">)</span>
-<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'wind_speed.csv'</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Need-to-see-some-more-examples?">Need to see some more examples?<a class="anchor-link" href="#Need-to-see-some-more-examples?">¶</a></h3><p><a href="https://w3schoolsua.github.io/python/python_file_handling_en.html#gsc.tab=0">https://w3schoolsua.github.io/python/python_file_handling_en.html#gsc.tab=0</a>
-<br/><a href="https://www.geeksforgeeks.org/file-handling-python/">https://www.geeksforgeeks.org/file-handling-python/</a>
-<br/><a href="https://realpython.com/read-write-files-python/#file-paths">https://realpython.com/read-write-files-python/#file-paths</a></p>
-<h3 id="Want-to-take-a-quiz?">Want to take a quiz?<a class="anchor-link" href="#Want-to-take-a-quiz?">¶</a></h3><p><a href="https://realpython.com/quizzes/read-write-files-python/">https://realpython.com/quizzes/read-write-files-python/</a>
-<br/><a href="https://pynative.com/python-file-handling-quiz/">https://pynative.com/python-file-handling-quiz/</a></p>
-<h3 id="Want-some-more-advanced-information?">Want some more advanced information?<a class="anchor-link" href="#Want-some-more-advanced-information?">¶</a></h3><p><a href="https://pynative.com/python/file-handling/#:~:text=To%20read%20or%20write%20a,It%20returns%20the%20file%20object">https://pynative.com/python/file-handling/#:~:text=To%20read%20or%20write%20a,It%20returns%20the%20file%20object</a>.</p>
+<h3 id="Need-to-see-some-more-examples?">Need to see some more examples?<a class="anchor-link" href="#Need-to-see-some-more-examples?">¶</a></h3><p><a href="https://www.w3schools.com/python/python_variables.asp">https://www.w3schools.com/python/python_variables.asp</a>
+<br/><a href="https://www.geeksforgeeks.org/python-variables/">https://www.geeksforgeeks.org/python-variables/</a></p>
+<h3 id="Want-to-take-a-quiz?">Want to take a quiz?<a class="anchor-link" href="#Want-to-take-a-quiz?">¶</a></h3><p><a href="https://realpython.com/quizzes/python-variables/">https://realpython.com/quizzes/python-variables/</a>
+<br/><a href="https://pynative.com/python-variables-and-data-types-quiz/">https://pynative.com/python-variables-and-data-types-quiz/</a></p>
+<h3 id="Want-some-more-advanced-information?">Want some more advanced information?<a class="anchor-link" href="#Want-some-more-advanced-information?">¶</a></h3><p><strong>Objects and Types</strong>
+<br/><a href="https://realpython.com/python-data-types/">https://realpython.com/python-data-types/</a>
+<br/><a href="https://realpython.com/python-variables/">https://realpython.com/python-variables/</a>
+<br/><a href="https://pynative.com/python-variables/">https://pynative.com/python-variables/</a></p>
+<p><strong>Floating point numbers</strong>
+<br/><a href="https://bteccomputing.co.uk/use-of-binary-to-represent-negative-and-floating-point-numbers/">https://bteccomputing.co.uk/use-of-binary-to-represent-negative-and-floating-point-numbers/</a>
+<br/><a href="https://www.youtube.com/watch?v=L8OYx1I8qNg">https://www.youtube.com/watch?v=L8OYx1I8qNg</a></p>
 </div>
 </div>
 </div>
