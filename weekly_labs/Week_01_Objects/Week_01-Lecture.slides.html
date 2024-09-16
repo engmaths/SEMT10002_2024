@@ -7546,6 +7546,42 @@ main {
 </div>
 </div>
 </div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd19cfc4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Integers and floating point numbers are stored on a computer as <strong>binary</strong> or <strong>base-2</strong> numbers.</p>
+<p>Each number is formed by finding the sum of base-2 numbers, each multiplied by a factor <strong>1 or 0</strong>.</p>
+<img alt="No description has been provided for this image" src="https://github.com/engmaths/EMAT10007_2023/blob/main/weekly_content/img/binary_float_a.png?raw=true" width="75%"/>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=52f5a4a9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The limited number of bits used to store floating point numbers can lead to inexact storage of fractional numbers, known as floating point error.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e656eb4c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Strings (text characters) are stored on a computer as a series of bytes (8 bit binary number).</p>
+<p>Boolean <code>True</code> and <code>False</code> values are stored in computer memory as integers <code>1</code> and <code>0</code></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ed5ec0c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7734,7 +7770,7 @@ c) <code>'Programming'</code></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Object type</th>
+<th style="text-align:left"></th>
 <th style="text-align:left"><code>True</code></th>
 <th style="text-align:left"><code>False</code></th>
 </tr>
@@ -7751,7 +7787,7 @@ c) <code>'Programming'</code></p>
 <td style="text-align:left">zero (<code>0.0</code>)</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><code>str</code></td>
 <td style="text-align:left">non-empty string</td>
 <td style="text-align:left">empty string (<code>''</code>)</td>
 </tr>
@@ -7847,7 +7883,7 @@ c) <code>'Programming'</code></p>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c649a5cc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8b990f3d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7865,7 +7901,7 @@ c) <code>'Programming'</code></p>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eef4ac07">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a0155a8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7975,27 +8011,21 @@ c) <code>'Programming'</code></p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol>
-<li><p>Select File &gt;&gt; New file &gt;&gt; Python file</p>
-</li>
-<li><p>Select File &gt;&gt; Save</p>
-</li>
-<li><p>In the window that opens, give your file a name with no spaces, ending in <code>.py</code>. <br/>Ensure that you save your file in the 'Documents' folder of your user area. You may want to create a subfolder to store the files you create on this unit.<br/>This folder will be accessible from all open-access University Linux computers</p>
-</li>
-<li><p>Click save</p>
-</li>
-<li><p>In the editor window, create a variable <code>a</code> and assign it the integer value <code>1</code> by typing:</p>
-</li>
+<li>Select File &gt;&gt; New file &gt;&gt; Python file</li>
+<li>Select File &gt;&gt; Save</li>
+<li>In the window that opens, give your file a name with no spaces, ending in <code>.py</code> and click save. <br/><strong>Lab computers</strong>: Save file in 'Documents' folder of your user area, in a subfolder for this unit. <br/><strong>Personal computers</strong>: Save file wherever you like</li>
+<li>In the editor window, create a variable <code>a</code> and assign it the integer value <code>1</code> by typing:</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 <hr/>
-<ol start="2">
+<ol start="5">
 <li>On the next line type:</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 <hr/>
-<ol start="3">
+<ol start="6">
 <li>Click the triangle shaped button in the top right-hand corner OR press 'Ctrl' + 'F5' to run the code, and select 'Python Debugger' if prompted. <br/>The output of the code will appear in the panel at the bottom of the window</li>
 </ol>
 <hr/>
@@ -8062,28 +8092,22 @@ c) <code>'Programming'</code></p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Exercise-3---Running-code-in-an-IDE">Exercise 3 - Running code in an IDE<a class="anchor-link" href="#Exercise-3---Running-code-in-an-IDE">¶</a></h1><p>Repeat the IDE demo by yourself</p>
 <ol>
-<li><p>Select File &gt;&gt; New file &gt;&gt; Python file</p>
-</li>
-<li><p>Select File &gt;&gt; Save</p>
-</li>
-<li><p>In the window that opens, give your file a name with no spaces, ending in <code>.py</code>. <br/>Ensure that you save your file in the 'Documents' folder of your user area. You may want to create a subfolder to store the files you create on this unit.<br/>This folder will be accessible from all open-access University Linux computers</p>
-</li>
-<li><p>Click save</p>
-</li>
-<li><p>In the editor window, create a variable <code>a</code> and assign it the integer value <code>1</code> by typing:</p>
-</li>
+<li>Select File &gt;&gt; New file &gt;&gt; Python file</li>
+<li>Select File &gt;&gt; Save</li>
+<li>In the window that opens, give your file a name with no spaces, ending in <code>.py</code> and click save. <br/><strong>Lab computers</strong>: Save file in 'Documents' folder of your user area, in a subfolder for this unit. <br/><strong>Personal computers</strong>: Save file wherever you like</li>
+<li>In the editor window, create a variable <code>a</code> and assign it the integer value <code>1</code> by typing:</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 <hr/>
-<ol start="2">
+<ol start="5">
 <li>On the next line type:</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 <hr/>
-<ol start="3">
-<li>Click the triangle shaped button in the top right-hand corner OR press 'Ctrl' + 'F5' to run the code, and select 'Python Debugger' if prompted. <br/>The output will appear in the panel at the bottom of the window</li>
+<ol start="6">
+<li>Click the triangle shaped button in the top right-hand corner OR press 'Ctrl' + 'F5' to run the code, and select 'Python Debugger' if prompted. <br/>The output of the code will appear in the panel at the bottom of the window</li>
 </ol>
 <hr/>
 </div>
