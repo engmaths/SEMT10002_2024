@@ -53,8 +53,7 @@ for line in test_lines:
         assert starts_with_num>ends_with_num, f'You said \"{line}\" but {starts_with_num} is not greater than {ends_with_num}'
         print('Verified a>b:', line)
     elif 'less' in words:
-        assert starts_with_num<ends_with_num, _
-        f'You said \"{line}\" but {starts_with_num} is not less than {ends_with_num}'
+        assert starts_with_num<ends_with_num, f'You said \"{line}\" but {starts_with_num} is not less than {ends_with_num}'
         print('Verified a<b:', line)
     elif 'equal' in words or 'equals' in words:
         assert starts_with_num==ends_with_num, f'You said \"{line}\" but {starts_with_num} is not equal to {ends_with_num}'
