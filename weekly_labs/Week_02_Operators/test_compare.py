@@ -14,7 +14,7 @@ from subprocess import run
 # check right number of arguments
 if len(argv)!=2:
     print('Usage: python', argv[0], '<script filename>')
-    exit(1)
+    raise ValueError('Script name not provided')
 
 # run supplied script and capture output
 script_name = argv[1]
@@ -34,7 +34,7 @@ else:
     print()
     print(test_result.stdout)
     print(test_result.stderr)
-    exit(1)
+    raise ValueError('Script terminated with error')
 
 # script ran - so check outputs make sense
 test_lines = test_result.stdout.splitlines()
@@ -47,7 +47,7 @@ for line in test_lines:
     if 'not' in words:
         print('Negatives blow my mind')
         print('Cannot verify', line)
-        exit(1)
+        raise ValueError('Cannot handle use of NOT')
     # check statements match numbers given
     if 'greater' in words or 'more' in words:
         assert starts_with_num>ends_with_num, f'You said \"{line}\" but {starts_with_num} is not greater than {ends_with_num}'
