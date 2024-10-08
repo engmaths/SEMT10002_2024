@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 from math import cos, sin
+from numpy import sinc, pi
 
 _x = 0.
 _y = 0.
@@ -17,13 +18,18 @@ def reset_robot(x_init = 0.0, y_init=0.0, theta_init = 0.0):
 
 WHEEL_SEP = 5.0
 
-def drive(right_turn, left_turn):
+def drive(left_turn, right_turn):
     global _x, _y, _theta
-    turn_angle = (right_turn - left_turn)/WHEEL_SEP
-    arc_length = 0.5*(right_turn + left_turn)
-    _x = _x + right_turn
-    _y = _y + left_turn
-    history.append((_x,_y,_theta))
+    num_steps = 50
+    delta_left = left_turn/num_steps
+    delta_right = right_turn/num_steps
+    delta_angle = (delta_left - delta_right)/WHEEL_SEP
+    delta_length = 0.5*(delta_right + delta_left)
+    for ii in range(num_steps):
+        _x = _x + delta_length*sin(_theta)
+        _y = _y + delta_length*cos(_theta)
+        _theta = _theta + delta_angle
+        history.append((_x,_y,_theta))
 
 def position_x():
     return _x
