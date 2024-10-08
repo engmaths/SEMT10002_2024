@@ -40,6 +40,16 @@ def position_y():
 def orientation():
     return _theta
 
+TAPE_CTR_X = 50.
+TAPE_CTR_Y = 50.
+TAPE_RAD = 40.
+TAPE_HALF_WIDTH = 0.5
+
+SENSOR_Y = 3.0
+LEFT_SENSOR_X = -1.5
+MIDDLE_SENSOR_X = -1.5
+RIGHT_SENSOR_X = -1.5
+
 def sensor_left():
     return True
 
