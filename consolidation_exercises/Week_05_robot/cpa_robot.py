@@ -96,7 +96,7 @@ def _plot_tape():
 def plot_path():
     _plot_tape()
     plt.plot([p[0] for p in history],
-             [p[1] for p in history],'g-')
+             [p[1] for p in history],'k-')
     draw_robot()
     plt.axis('equal')
     plt.show()
