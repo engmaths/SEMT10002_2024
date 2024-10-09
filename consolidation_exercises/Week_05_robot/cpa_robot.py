@@ -45,22 +45,106 @@ TAPE_CTR_Y = 50.
 TAPE_RAD = 40.
 TAPE_HALF_WIDTH = 0.5
 
+def _robot_to_global(x_robot,y_robot):
+    x_global = _x + x_robot*cos(_theta) + y_robot*sin(_theta)
+    y_global = _y - x_robot*sin(_theta) + y_robot*cos(_theta)
+    return x_global, y_global
+
 SENSOR_Y = 3.0
-LEFT_SENSOR_X = -1.5
-MIDDLE_SENSOR_X = -1.5
-RIGHT_SENSOR_X = -1.5
+LEFT_SENSOR_X = -0.75
+MIDDLE_SENSOR_X = 0.0
+RIGHT_SENSOR_X = +0.75
+
+def _on_tape(x,y):
+    radsq = (x - TAPE_CTR_X)**2 + (y - TAPE_CTR_Y)**2
+    result = True
+    if radsq > (TAPE_RAD + TAPE_HALF_WIDTH)**2:
+        result = False
+    if radsq < (TAPE_RAD - TAPE_HALF_WIDTH)**2:
+        result = False
+    return result
 
 def sensor_left():
-    return True
+    x,y = _robot_to_global(LEFT_SENSOR_X,SENSOR_Y)
+    return _on_tape(x,y)
 
 def sensor_middle():
-    return True
+    x,y = _robot_to_global(MIDDLE_SENSOR_X,SENSOR_Y)
+    return _on_tape(x,y)
 
 def sensor_right():
-    return True
+    x,y = _robot_to_global(RIGHT_SENSOR_X,SENSOR_Y)
+    return _on_tape(x,y)
+
+ROBOT_BOX = [(2.5,5),(-2.5,5),(-2.5,-2.5),(2.5,-2.5),(2.5,5)]
+def draw_robot():
+    box_global = [_robot_to_global(x,y) for (x,y) in ROBOT_BOX]
+    plt.plot([p[0] for p in box_global],
+             [p[1] for p in box_global],'b-')
+    sensors_global = [_robot_to_global(x,SENSOR_Y) for x in [LEFT_SENSOR_X,MIDDLE_SENSOR_X,RIGHT_SENSOR_X]]
+    #print(sensors_global)
+    plt.plot([p[0] for p in sensors_global],
+             [p[1] for p in sensors_global],'r.')
 
 def plot_path():
     plt.plot([p[0] for p in history],
-             [p[1] for p in history])
+             [p[1] for p in history],'g-')
+    plt.plot([TAPE_CTR_X + (TAPE_RAD + TAPE_HALF_WIDTH)*cos(pi*ang/180) for ang in range(360)],
+             [TAPE_CTR_Y + (TAPE_RAD + TAPE_HALF_WIDTH)*sin(pi*ang/180) for ang in range(360)],'k')
+    plt.plot([TAPE_CTR_X + (TAPE_RAD - TAPE_HALF_WIDTH)*cos(pi*ang/180) for ang in range(360)],
+             [TAPE_CTR_Y + (TAPE_RAD - TAPE_HALF_WIDTH)*sin(pi*ang/180) for ang in range(360)],'k')
+    draw_robot()
     plt.axis('equal')
     plt.show()
+
+def _demo_robot():
+    NORMAL_DRIVE = 1.0
+    SLOW_DRIVE = 0.5
+    for _ in range(100):
+        drive(1.1*SLOW_DRIVE,SLOW_DRIVE)
+        if sensor_middle():
+            print('found line')
+            break
+    for _ in range(50):
+        if position_y() >= 75:
+            print('at y=75')
+            break
+        if sensor_middle():
+            if sensor_right() and sensor_left():
+                print('pivot left')
+                drive(-SLOW_DRIVE,SLOW_DRIVE)
+            elif sensor_left():
+                print('left a bit')
+                drive(SLOW_DRIVE,NORMAL_DRIVE)
+            elif sensor_right():
+                print('right a bit')
+                drive(NORMAL_DRIVE,SLOW_DRIVE)
+            else:
+                print('straight')
+                drive(NORMAL_DRIVE,NORMAL_DRIVE)
+        else:
+            if sensor_right() and sensor_left():
+                raise(RuntimeError('Sensor fault - on,off,on'))
+            elif sensor_left():
+                print('pivot left')
+                drive(-SLOW_DRIVE,SLOW_DRIVE)
+            elif sensor_right():
+                print('pivot right')
+                drive(SLOW_DRIVE,-SLOW_DRIVE)
+            else:
+                print('lost')
+                drive(1.1*SLOW_DRIVE,SLOW_DRIVE)
+    for _ in range(50):
+        TARGET_ANGLE = 0.5*pi
+        error = orientation() - TARGET_ANGLE
+        print(error)
+        K = 0.25
+        drive(-K*error,K*error)
+    distance = 50 - position_x()
+    drive(distance,distance)
+    print('Should be at 50,75')
+    print(position_x(),position_y())
+    plot_path()
+
+if __name__=='__main__':
+    _demo_robot()
