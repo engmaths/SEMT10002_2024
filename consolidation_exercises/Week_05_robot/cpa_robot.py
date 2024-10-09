@@ -86,13 +86,17 @@ def draw_robot():
     plt.plot([p[0] for p in sensors_global],
              [p[1] for p in sensors_global],'r.')
 
+def _plot_tape():
+    NUM_TICKS = 720
+    angs = [2*pi*ii/NUM_TICKS for ii in range(NUM_TICKS)]
+    for ang in angs:
+        plt.plot([TAPE_CTR_X + (TAPE_RAD + r)*cos(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],
+                 [TAPE_CTR_Y + (TAPE_RAD + r)*sin(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],'c')
+
 def plot_path():
+    _plot_tape()
     plt.plot([p[0] for p in history],
              [p[1] for p in history],'g-')
-    plt.plot([TAPE_CTR_X + (TAPE_RAD + TAPE_HALF_WIDTH)*cos(pi*ang/180) for ang in range(360)],
-             [TAPE_CTR_Y + (TAPE_RAD + TAPE_HALF_WIDTH)*sin(pi*ang/180) for ang in range(360)],'k')
-    plt.plot([TAPE_CTR_X + (TAPE_RAD - TAPE_HALF_WIDTH)*cos(pi*ang/180) for ang in range(360)],
-             [TAPE_CTR_Y + (TAPE_RAD - TAPE_HALF_WIDTH)*sin(pi*ang/180) for ang in range(360)],'k')
     draw_robot()
     plt.axis('equal')
     plt.show()
@@ -137,7 +141,7 @@ def _demo_robot():
     for _ in range(50):
         TARGET_ANGLE = 0.5*pi
         error = orientation() - TARGET_ANGLE
-        print(error)
+        print('Angle',orientation(),'error',error)
         K = 0.25
         drive(-K*error,K*error)
     distance = 50 - position_x()
