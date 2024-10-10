@@ -80,42 +80,51 @@ def sensor_right():
     return _on_tape(x,y)
 
 ROBOT_BOX = [(2.5,5),(-2.5,5),(-2.5,-2.5),(2.5,-2.5),(2.5,5)]
-def draw_robot(robot_state = None):
+def draw_robot(ax,robot_state = None):
     if robot_state is None:
         robot_state = (_x,_y,_theta)
     box_global = [_robot_to_global(x,y,robot_state) for (x,y) in ROBOT_BOX]
-    plt.plot([p[0] for p in box_global],
-             [p[1] for p in box_global],'b-')
+    robot_line = ax.plot([p[0] for p in box_global],
+                         [p[1] for p in box_global],'b-')[0]
     sensors_global = [_robot_to_global(x,SENSOR_Y,robot_state) for x in [LEFT_SENSOR_X,MIDDLE_SENSOR_X,RIGHT_SENSOR_X]]
-    plt.plot([p[0] for p in sensors_global],
-             [p[1] for p in sensors_global],'r.')
+    sensors_line = ax.plot([p[0] for p in sensors_global],
+                           [p[1] for p in sensors_global],'r.')[0]
+    return robot_line, sensors_line
 
-def _plot_tape():
+def _plot_tape(ax):
     NUM_TICKS = 720
     angs = [2*pi*ii/NUM_TICKS for ii in range(NUM_TICKS)]
     for ang in angs:
-        plt.plot([TAPE_CTR_X + (TAPE_RAD + r)*cos(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],
+        ax.plot([TAPE_CTR_X + (TAPE_RAD + r)*cos(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],
                  [TAPE_CTR_Y + (TAPE_RAD + r)*sin(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],'c')
 
 def plot_path():
-    _plot_tape()
+    fig,ax = plt.subplots()
+    _plot_tape(ax)
     plt.plot([p[0] for p in history],
              [p[1] for p in history],'k-')
-    draw_robot()
+    draw_robot(ax)
     plt.axis('equal')
     plt.show()
 
 def animate_path():
     fig,ax = plt.subplots()
-    _plot_tape()
+    _plot_tape(ax)
     ax.axis('equal')
     path_line = ax.plot([],[],'k-')[0]
+    robot_line, sensors_line = draw_robot(ax)
     def update(frame):
         print(frame)
         path_line.set_xdata([p[0] for p in history[:frame]])
         path_line.set_ydata([p[1] for p in history[:frame]])
-        return path_line
-    ani = animation.FuncAnimation(fig=fig, func=update, frames=range(0,len(history),10), interval=1)
+        box_global = [_robot_to_global(x,y,history[frame]) for (x,y) in ROBOT_BOX]
+        robot_line.set_xdata([p[0] for p in box_global])
+        robot_line.set_ydata([p[1] for p in box_global])
+        sensors_global = [_robot_to_global(x,SENSOR_Y,history[frame]) for x in [LEFT_SENSOR_X,MIDDLE_SENSOR_X,RIGHT_SENSOR_X]]
+        sensors_line.set_xdata([p[0] for p in sensors_global])
+        sensors_line.set_ydata([p[1] for p in sensors_global])
+        return path_line, robot_line, sensors_line
+    ani = animation.FuncAnimation(fig=fig, func=update, frames=range(0,len(history),10), interval=15)
     plt.show()
 
 def _demo_robot():
