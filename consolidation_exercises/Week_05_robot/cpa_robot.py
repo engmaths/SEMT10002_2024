@@ -1,4 +1,5 @@
 from matplotlib import pyplot as plt
+from matplotlib import animation as animation
 from math import cos, sin
 from numpy import sinc, pi
 
@@ -45,9 +46,11 @@ TAPE_CTR_Y = 50.
 TAPE_RAD = 40.
 TAPE_HALF_WIDTH = 0.5
 
-def _robot_to_global(x_robot,y_robot):
-    x_global = _x + x_robot*cos(_theta) + y_robot*sin(_theta)
-    y_global = _y - x_robot*sin(_theta) + y_robot*cos(_theta)
+def _robot_to_global(x_robot,y_robot,robot_state=None):
+    if robot_state is None:
+        robot_state = (_x,_y,_theta)
+    x_global = robot_state[0] + x_robot*cos(robot_state[2]) + y_robot*sin(robot_state[2])
+    y_global = robot_state[1] - x_robot*sin(robot_state[2]) + y_robot*cos(robot_state[2])
     return x_global, y_global
 
 SENSOR_Y = 3.0
@@ -77,12 +80,13 @@ def sensor_right():
     return _on_tape(x,y)
 
 ROBOT_BOX = [(2.5,5),(-2.5,5),(-2.5,-2.5),(2.5,-2.5),(2.5,5)]
-def draw_robot():
-    box_global = [_robot_to_global(x,y) for (x,y) in ROBOT_BOX]
+def draw_robot(robot_state = None):
+    if robot_state is None:
+        robot_state = (_x,_y,_theta)
+    box_global = [_robot_to_global(x,y,robot_state) for (x,y) in ROBOT_BOX]
     plt.plot([p[0] for p in box_global],
              [p[1] for p in box_global],'b-')
-    sensors_global = [_robot_to_global(x,SENSOR_Y) for x in [LEFT_SENSOR_X,MIDDLE_SENSOR_X,RIGHT_SENSOR_X]]
-    #print(sensors_global)
+    sensors_global = [_robot_to_global(x,SENSOR_Y,robot_state) for x in [LEFT_SENSOR_X,MIDDLE_SENSOR_X,RIGHT_SENSOR_X]]
     plt.plot([p[0] for p in sensors_global],
              [p[1] for p in sensors_global],'r.')
 
@@ -99,6 +103,19 @@ def plot_path():
              [p[1] for p in history],'k-')
     draw_robot()
     plt.axis('equal')
+    plt.show()
+
+def animate_path():
+    fig,ax = plt.subplots()
+    _plot_tape()
+    ax.axis('equal')
+    path_line = ax.plot([],[],'k-')[0]
+    def update(frame):
+        print(frame)
+        path_line.set_xdata([p[0] for p in history[:frame]])
+        path_line.set_ydata([p[1] for p in history[:frame]])
+        return path_line
+    ani = animation.FuncAnimation(fig=fig, func=update, frames=range(0,len(history),10), interval=1)
     plt.show()
 
 def _demo_robot():
@@ -148,7 +165,8 @@ def _demo_robot():
     drive(distance,distance)
     print('Should be at 50,75')
     print(position_x(),position_y())
-    plot_path()
+    #plot_path()
+    animate_path()
 
 if __name__=='__main__':
     _demo_robot()
