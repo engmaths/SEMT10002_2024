@@ -1,4 +1,3 @@
-print('hello')
+with open('student_marks.csv') as f:
 
-with open('student_marks.csv') as file:
-    file.read()
+    print(f.read())

@@ -1,49 +1,75 @@
-import csv 
+import csv
 
+# Open the file
 with open('../my_data/student_marks.csv') as f:
+    
     f = csv.reader(f)
+
+    # Display the contents 
     f = list(f)
     print(f)
-    values = []
-    for item in f:
-        values.append(int(item[1]))
-    values = [int(item[1]) for item in f]
-    print(values)
 
-    print(sum(values)/len(values))
+# Get student marks as numerical values 
+marks = []
+for line in f:
+    marks.append(int(line[1]))
 
-    grades = []
+# Another way to get student marks as numerical values
+# marks = [int(line[1]) for line in f]
 
-    for m in values:
-        if m >= 70:
-            grades.append('A')
-        elif m >= 60:
-            grades.append('B')
-        elif m >= 50:
-            grades.append('C')
-        elif m >= 40:
-            grades.append('D')
-        else:
-            grades.append('E')
+print(marks)
 
-    print(grades)
+# Find the average of the student marks 
+mean = sum(marks)/len(marks)
+print(mean)
 
-# grades = [[g]for g in grades]
+# Compute the grade associated with each mark
+grades = []
 
-new_file_contents = []
+for m in marks:
+    if m >= 70:
+        grades.append('A')
+    elif m >= 60:
+        grades.append('B')
+    elif m >= 50:
+        grades.append('C')
+    elif m >= 40:
+        grades.append('D')
+    else:
+        grades.append('E')
 
-# for line, grade in zip(f, grades):
-#     line.append(grade)
-#     new_file_contents.append(line)
+print(grades)
 
-new_file_contents = [line + [grade] for line, grade in zip(f, grades)]
 
-print(new_file_contents)
+# Save grades to new file
+with open('../my_data/student_grades.csv', 'w') as file:
     
+    file = csv.writer(file)
+    file.writerow(grades)
 
-with open('student_grades.csv', 'w') as f:
-    f = csv.writer(f)
-    f.writerows(new_file_contents)
+
+# Add grades as new column to original data
+new_data = []
+for line, g in zip(f, grades):
+    line.append(g)
+    new_data.append(line)
+
+
+# Another way to add grades as new column to original data
+# new_data = [line + [g] for line,g in zip(f, grades)]
+
+
+with open('../my_data/student_marks_updated.csv', 'w') as file:
+    
+    file = csv.writer(file)
+
+    # file.writerows(grades)
+    file.writerows(new_data)
+
+
+
+
+
 
 
 

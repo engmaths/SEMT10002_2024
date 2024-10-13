@@ -1,23 +1,29 @@
 import csv
 
+# Open the file
 with open('../my_data/student_marks.csv') as f:
     
     f = csv.reader(f)
 
+    # Display the contents 
     f = list(f)
     print(f)
 
-# marks = [int(line[1]) for line in f]
-
+# Get student marks as numerical values 
 marks = []
 for line in f:
     marks.append(int(line[1]))
 
+# Another way to get student marks as numerical values
+# marks = [int(line[1]) for line in f]
+
 print(marks)
 
+# Find the average of the student marks 
 mean = sum(marks)/len(marks)
 print(mean)
 
+# Compute the grade associated with each mark
 grades = []
 
 for m in marks:
@@ -34,17 +40,26 @@ for m in marks:
 
 print(grades)
 
-# grades = [[g] for g in grades]
 
-# new_data = [line + [g] for line,g in zip(f, grades)]
+# Save grades to new file
+with open('../my_data/student_grades.csv', 'w') as file:
+    
+    file = csv.writer(file)
+    file.writerow(grades)
 
+
+# Add grades as new column to original data
 new_data = []
-
 for line, g in zip(f, grades):
     line.append(g)
     new_data.append(line)
 
-with open('../my_data/student_grades.csv', 'w') as file:
+
+# Another way to add grades as new column to original data
+# new_data = [line + [g] for line,g in zip(f, grades)]
+
+
+with open('../my_data/student_marks_updated.csv', 'w') as file:
     
     file = csv.writer(file)
 
