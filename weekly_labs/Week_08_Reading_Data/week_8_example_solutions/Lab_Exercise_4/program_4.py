@@ -20,7 +20,7 @@ with open('sensor_data.csv') as file:
     print(file_as_m)
 
     # Round to nearest cm
-    file_as_m = [[round(item, 2) for item in line] for line in file]
+    file_as_m = [[round(item, 2) for item in line] for line in file_as_m]
     print(file_as_m[-1])
 
     # First sensor data
@@ -39,7 +39,8 @@ with open('sensor_data.csv') as file:
         else:
             total = sum(sensor_1[i-(N-1):i])
             average = total / N
-            average = round(average, 2)
+            average = format(average, '.2f')
+            # average = round(average, 2)
             filtered_data.append(average)
 
     print(filtered_data)
