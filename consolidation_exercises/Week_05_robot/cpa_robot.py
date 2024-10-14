@@ -53,7 +53,7 @@ def _robot_to_global(x_robot,y_robot,robot_state=None):
     y_global = robot_state[1] - x_robot*sin(robot_state[2]) + y_robot*cos(robot_state[2])
     return x_global, y_global
 
-SENSOR_Y = 3.0
+SENSOR_Y = 3.5
 LEFT_SENSOR_X = -0.75
 MIDDLE_SENSOR_X = 0.0
 RIGHT_SENSOR_X = +0.75
@@ -79,8 +79,8 @@ def sensor_right():
     x,y = _robot_to_global(RIGHT_SENSOR_X,SENSOR_Y)
     return _on_tape(x,y)
 
-ROBOT_BOX = [(2.5,5),(-2.5,5),(-2.5,-2.5),(2.5,-2.5),(2.5,5)]
-def draw_robot(ax,robot_state = None):
+ROBOT_BOX = [(2.0,5.0),(-2.0,5.0),(-2.0,-3.0),(2.0,-3.0),(2.0,5.0)]
+def _draw_robot(ax,robot_state = None):
     if robot_state is None:
         robot_state = (_x,_y,_theta)
     box_global = [_robot_to_global(x,y,robot_state) for (x,y) in ROBOT_BOX]
@@ -89,6 +89,12 @@ def draw_robot(ax,robot_state = None):
     sensors_global = [_robot_to_global(x,SENSOR_Y,robot_state) for x in [LEFT_SENSOR_X,MIDDLE_SENSOR_X,RIGHT_SENSOR_X]]
     sensors_line = ax.plot([p[0] for p in sensors_global],
                            [p[1] for p in sensors_global],'r.')[0]
+    left_wheel_global = [_robot_to_global(-0.5*WHEEL_SEP,y,robot_state) for y in [-0.5*WHEEL_SEP, 0.5*WHEEL_SEP]]
+    left_wheel_line = ax.plot([p[0] for p in left_wheel_global],
+                              [p[1] for p in left_wheel_global],'k-')[0]
+    right_wheel_global = [_robot_to_global(0.5*WHEEL_SEP,y,robot_state) for y in [-0.5*WHEEL_SEP, 0.5*WHEEL_SEP]]
+    right_wheel_line = ax.plot([p[0] for p in right_wheel_global],
+                               [p[1] for p in right_wheel_global],'k-')[0]
     return robot_line, sensors_line
 
 def _plot_tape(ax):
@@ -98,12 +104,19 @@ def _plot_tape(ax):
         ax.plot([TAPE_CTR_X + (TAPE_RAD + r)*cos(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],
                  [TAPE_CTR_Y + (TAPE_RAD + r)*sin(ang) for r in [-TAPE_HALF_WIDTH,TAPE_HALF_WIDTH]],'c')
 
+def plot_robot():
+    fig,ax = plt.subplots()
+    _draw_robot(ax)
+    plt.axis('equal')
+    plt.show()
+
+
 def plot_path():
     fig,ax = plt.subplots()
     _plot_tape(ax)
     plt.plot([p[0] for p in history],
              [p[1] for p in history],'k-')
-    draw_robot(ax)
+    _draw_robot(ax)
     plt.axis('equal')
     plt.show()
 
@@ -112,7 +125,7 @@ def animate_path():
     _plot_tape(ax)
     ax.axis('equal')
     path_line = ax.plot([],[],'k-')[0]
-    robot_line, sensors_line = draw_robot(ax)
+    robot_line, sensors_line = _draw_robot(ax)
     def update(frame):
         print(frame)
         path_line.set_xdata([p[0] for p in history[:frame]])
@@ -174,8 +187,8 @@ def _demo_robot():
     drive(distance,distance)
     print('Should be at 50,75')
     print(position_x(),position_y())
-    #plot_path()
-    animate_path()
+    plot_path()
+    #animate_path()
 
 if __name__=='__main__':
     _demo_robot()
