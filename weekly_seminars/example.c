@@ -10,9 +10,10 @@ int main(){
     E=M;
     int ii;
     for (ii=0; ii<100; ii++) {
-        printf("Iteration %d value of E is %lf",ii,E);
+        printf("Iteration %d value of E is %lf\n",ii,E);
         newE = M + e*sin(E);
-        if (abs(newE-E)<1e-9) {
+        if (fabs(newE-E)<1e-9) {
+            printf("Converged\n");
             break;
         }
         else {
