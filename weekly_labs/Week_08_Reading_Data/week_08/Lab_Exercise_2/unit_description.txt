@@ -1,0 +1,3 @@
+This is an introductory unit that does not require previous programming experience. 
+The skills acquired in this unit form a foundation for mathematical and data modelling, where real-world problems are solved with the help of computer programs that you write. 
+Specialist units in artificial intelligence, data-science, computational mechanics, and scientific computing all make use of computer programming and will further enhance your computing skills.
