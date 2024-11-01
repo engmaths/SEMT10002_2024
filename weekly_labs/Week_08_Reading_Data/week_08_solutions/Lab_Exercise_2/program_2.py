@@ -15,4 +15,7 @@ with open('rainfall.csv', encoding='utf-8-sig') as file:
     SD = (sum([(v - mean)**2 for v in values]) / len(values))** -2
     print(SD)
 
+    SD = sum([(v - mean)**2/ len(values) for v in values])** -2
+    print(SD)
+
     
