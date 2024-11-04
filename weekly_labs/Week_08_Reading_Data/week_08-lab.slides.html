@@ -7497,10 +7497,9 @@ main {
 <li><strong>Binary files</strong>: Data that is not intended to be human-readable. Bytes do not represent plain text characters, but other information about the file.</li>
 </ul>
 </li>
-<li>By importing a module, we can access additional functions, to handle tasks that we are likely to encounter.</li>
+<li>By importing a module (e.g. <code>csv</code>), we can access additional functions, to handle tasks that we are likely to encounter.</li>
 <li>This can avoid writing longer and more complicated code from scratch.</li>
-<li>Details of the functions associated with a module can be found in the module documentation</li>
-<li>The <code>csv</code> module provides functions for handling data using CSV files</li>
+<li>Details of the functions associated with a module can be found in the <strong>module documentation</strong></li>
 </ul>
 </div>
 </div>
@@ -7640,6 +7639,25 @@ main {
         |--- program_A.py
         |--- student_marks.csv
 </code></pre>
+<p>You will need to change directory to run the program...</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Remember the basic Terminal commands:</p>
+<ol>
+<li><em>ls</em>  (list) - lists the contents of a directory</li>
+<li><em>pwd</em> (print working directory) - prints the name of the current directory you are in</li>
+<li><em>cd &lt;name of directory&gt;</em> (change directory) - navigates to a new directory</li>
+</ol>
+<p>These can be prefixed with <code>!</code> (e.g. <code>!pwd</code>) to run in Colab.</p>
+<p><code>cd</code> must be prefixed with <code>%</code> in Colab so that it changes the working directory for all cells in the notebook.</p>
 </div>
 </div>
 </div>
@@ -7907,37 +7925,128 @@ b) Find the mean of the student marks</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Portfolio exercise</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol>
-<li>Create a new python file in the same directory as <code>sensor_data.csv</code> called <code>sensor_data_processing.py</code>:
-<br/>In terminal: <code>touch sensor_data_processing.py</code>
-<br/>In Colab: <code>!touch sensor_data_processing.py</code></li>
-</ol>
-<h4 id="Test-and-submit">Test and submit<a class="anchor-link" href="#Test-and-submit">¶</a></h4><p>Before submitting, download <code>test_sensor_data_processing.py</code></p>
-<p>To download locally to the computer you are working on, in the terminal, run:
-<code>curl -O https://raw.githubusercontent.com/engmaths/SEMT10002_2024/main/weekly_labs/Week_08_Reading_Data/test_sensor_data_processing.py</code></p>
-<p>To download to Colab:
-<code>!wget https://raw.githubusercontent.com/engmaths/SEMT10002_2024/main/weekly_labs/Week_08_Reading_Data/test_sensor_data_processing.py</code></p>
+<h1 id="Portfolio-exercise">Portfolio exercise<a class="anchor-link" href="#Portfolio-exercise">¶</a></h1><p>Last week, you completed the first part of Portfolio Exercise 3</p>
+<p>This week, you will finish the Portfolio Exercise and submit your python program containing the first and second parts of the exercise.</p>
+<p>Copy the contents of the portfolio exercise you completed last week into week_08/Portfolio_exercise_3/save_assigned_grades.py</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Here's-a-reminder-of-last-week's-exercise...">Here's a reminder of last week's exercise...<a class="anchor-link" href="#Here's-a-reminder-of-last-week's-exercise...">¶</a></h3><p>Returning to the student data from the previous question, you already have some code to calculate the average and standard deviation for each question.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Student</th>
+<th style="text-align:center">Question 1</th>
+<th style="text-align:center">Question 2</th>
+<th style="text-align:center">Question 3</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>| Martin | 6 | 1 | 4 | 11
+| Arthur | 3 | 8 | 4 | 15
+| Hemma | 7 | 4 | 5 | 16
+| Josh | 4 | 7 | 3 | 14</p>
+<p>Now, I'd like to turn these set of marks into a set of overall grades for each student. To do that, I'd like to you to write some code to create a new list containing the total marks achieved by each student. i.e for Martin, this would be a total = 6+1+4 = 11.</p>
+<p>Next, I'd like you to write some code to calculate the mean and standard deviation of the total marks achieved. Recall that the standard deviation of some data is given by:</p>
+<p>$\sigma = \sqrt {\sum^i_N \frac{(x_i-\mu)^2}{N}}$, where $\mu$ is the mean.</p>
+<p>In Python, you can calculate a square root using the function <code>math.sqrt()</code>.</p>
+<p>Next, you should write some code to normalise the marks by subtracting the mean score from each mark. i.e here the mean mark is 14, so Martin's normalised mark should become 11-14=-3.</p>
+<p>Finally, I'd like to turn these marks into a grade according to the formula:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Normalised Mark</th>
+<th style="text-align:center">Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">mark &lt; -1 * standard deviation</td>
+<td style="text-align:center">Fail</td>
+</tr>
+<tr>
+<td style="text-align:center">-1 * standard deviation &lt; mark &lt; 0</td>
+<td style="text-align:center">C</td>
+</tr>
+<tr>
+<td style="text-align:center">0 &lt; mark &lt; 1 * standard deviation</td>
+<td style="text-align:center">B</td>
+</tr>
+<tr>
+<td style="text-align:center">1 * standard deviation &lt; mark</td>
+<td style="text-align:center">A</td>
+</tr>
+</tbody>
+</table>
+<p>Write some code to turn the normalised mark into a grade for each student, storing the results in a <em>dictionary</em> with the student name as the key and grade as the value.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="This-week's-exercise...">This week's exercise...<a class="anchor-link" href="#This-week's-exercise...">¶</a></h3><p>Edit the program you wrote last week so that it saves the table containing student marks, in the format shown below, to a CSV file called <code>grades.csv</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Student</th>
+<th style="text-align:center">Question 1</th>
+<th style="text-align:center">Question 2</th>
+<th style="text-align:center">Question 3</th>
+<th style="text-align:center">Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Martin</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">???</td>
+</tr>
+<tr>
+<td style="text-align:center">Arthur</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">???</td>
+</tr>
+<tr>
+<td style="text-align:center">Hemma</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">???</td>
+</tr>
+<tr>
+<td style="text-align:center">Josh</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">???</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -7950,8 +8059,8 @@ b) Find the mean of the student marks</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Run your program using:</p>
 <ul>
-<li><code>python sensor_data_processing.py</code> (terminal)</li>
-<li><code>!python sensor_data_processing.py</code> (Colab)</li>
+<li>Terminal: <code>python save_assigned_grades.py</code></li>
+<li>Colab: <code>!python save_assigned_grades.py</code></li>
 </ul>
 </div>
 </div>
@@ -7963,11 +8072,12 @@ b) Find the mean of the student marks</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>You can use the following to test your program.  If you don't get any errors, you're ready to submit your program for marking</p>
+<p>You can use the following to test your program.</p>
 <ul>
-<li><code>python test_sensor_data_processing.py sensor_data_processing.py</code> (terminal)</li>
-<li><code>!python test_sensor_data_processing.py sensor_data_processing.py</code>(Colab)</li>
+<li>Terminal: <code>python test_save_assigned_grades.py save_assigned_grades.py</code></li>
+<li>Colab: <code>!python test_save_assigned_grades.py save_assigned_grades.py</code></li>
 </ul>
+<p>If you don't get any errors, you're ready to submit your program for marking. Submit only the Python file, not the csv file</p>
 </div>
 </div>
 </div>
@@ -7990,37 +8100,22 @@ b) Find the mean of the student marks</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>If you are opening the notebook in Google Colab, you can import the data files to use with the code cells throughout the notebook by running the code cell below:</p>
+<p>If you are working in Google Colab, import the data files used in these examples by running the code cell below:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">engmaths</span><span class="o">/</span><span class="n">SEMT10002_2024</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">weekly_labs</span><span class="o">/</span><span class="n">Week_08_Reading_Data</span><span class="o">/</span><span class="n">unit_data</span><span class="o">.</span><span class="n">json</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">'google.colab'</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">!</span>wget<span class="w"> </span>https://raw.githubusercontent.com/engmaths/SEMT10002_2024/main/weekly_labs/Week_08_Reading_Data/unit_data.json
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[8], line 1</span>
-<span class="ansi-red-fg">    wget https://raw.githubusercontent.com/engmaths/SEMT10002_2024/main/weekly_labs/Week_08_Reading_Data/unit_data.json</span>
-         ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
 </div>
 </div>
 </div>
