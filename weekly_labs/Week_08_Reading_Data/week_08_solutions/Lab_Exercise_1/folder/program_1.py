@@ -9,12 +9,20 @@ with open('../unit_description.txt') as f:
 
 with open('data/xyz_data.csv', encoding='utf-8-sig') as file:
     file = csv.reader(file)
-    file = list(file)
-    print(file)
-    file = file[1:]
-    x = [int(f[0]) for f in file]
-    z = [int(f[2]) for f in file]
-    print(x, z) 
 
-    product = [i*j for i, j in zip(x, z)]
-    print(product)   
+    # Make subscriptable
+    file = list(file)
+
+    # Remove header
+    file = file[1:]
+
+    product = []
+
+    for f in file:
+        product.append(int(f[0]) * int(f[2]))
+
+    print(product) 
+
+    # # An alternative method using list comprehensions
+    # product = [int(f[0]) * int(f[2]) for f in file]
+    # print(product)   

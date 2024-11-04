@@ -7,20 +7,30 @@ import matplotlib.pyplot as plt
 with open('sensor_data.csv') as file:
     file = csv.reader(file)
     file = list(file)
-    # print(file)
 
     # Remove header
     file = file[1:]
 
-    # Remove time column
-    time = [float(line[0])*10**(-3) for line in file]
-    file = [line[1:] for line in file]
+    # Convert all data to numerical
+    data_numerical = []
+    for line in file:
+        line_numerical = []
+        for item in line:
+            line_numerical.append(float(item))
+        data_numerical.append(line_numerical)
+    
+    # # Alternative method with list comprehension
+    # data_numerical = [[float(item) for item in line] for line in file]
 
-    # Convert to floating point values
-    file = [[float(item) for item in line] for line in file]
+    # Get time and sensor 1 column
+    time, sensor_1 = [], []
+    for line in data_numerical :
+        time.append(line[0]*10**(-3)) # Time in s
+        sensor_1.append(line[1])
 
-    # First sensor data
-    sensor_1 = [line[0] for line in file]
+    # # Alternative method using list comprehensions 
+    # time = [line[0]*10**(-3) for line in data_numerical]
+    # sensor_1 = [line[1] for line in data_numerical]
 
 
     ###########################################################
@@ -33,6 +43,8 @@ with open('sensor_data.csv') as file:
     # Filtered data 
     filtered_data = []
     for n in range(len(sensor_1)):
+
+        # Skip the first 4 values 
         if n < N-1:
             continue
 
@@ -41,14 +53,11 @@ with open('sensor_data.csv') as file:
             average = total / N
             filtered_data.append(average)
 
-    # Arrange as columns before saving 
-    filtered_data_columns = [[f] for f in filtered_data]
-
+    # Save filtered data as column
     with open('filtered_sensor_data.csv', 'w') as f:
         f = csv.writer(f)
-        f.writerows(filtered_data_columns)
-
-
+        for d in filtered_data:
+            f.writerow([d])
 
     ###########################################################
     ##    WEEK 9 ANSWER
@@ -59,7 +68,6 @@ with open('sensor_data.csv') as file:
 
     # Filtered data 
     filtered = {}
-    
 
     for N in window:
 
@@ -74,25 +82,23 @@ with open('sensor_data.csv') as file:
                 average = total / N
                 filtered_data.append(average)
 
-        # # Arrange as columns before saving 
-        # filtered_data_columns = [[f] for f in filtered_data]
-
+        # # Save filtered data as column
         # with open('filtered_sensor_data.csv', 'w') as f:
         #     f = csv.writer(f)
-        #     f.writerows(filtered_data_columns)
+        #     for d in filtered_data:
+        #         f.writerow([d])
 
         filtered[str(N)] = filtered_data
 
+    # Week 9 exercise
+    plt.plot(time, sensor_1)
+    # plt.plot(time[N-1:], filtered_data)
 
-# Week 9 exercise
-plt.plot(time, sensor_1)
-# plt.plot(time[N-1:], filtered_data)
-
-for N in window:
-    plt.plot(time[N-1:], filtered[str(N)])
-plt.xlabel('Time s')
-plt.ylabel('Distance mm')
-plt.show()
+    for N in window:
+        plt.plot(time[N-1:], filtered[str(N)])
+    plt.xlabel('Time s')
+    plt.ylabel('Distance mm')
+    plt.show()
 
 
 

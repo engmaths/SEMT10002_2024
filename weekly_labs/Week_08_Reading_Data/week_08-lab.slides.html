@@ -7584,7 +7584,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -7603,10 +7603,8 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol>
+<ol start="2">
 <li>You can view the files in the Files tab in the side bar</li>
-<li>To run a Python file, run `!python <filename></filename></li>
-<li>To change directory, run <code>%cd &lt;file_path&gt;</code> (prefixing with <code>%</code> instead of <code>!</code> means that it will be effective across all code cells run)</li>
 </ol>
 </div>
 </div>
@@ -7630,16 +7628,15 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Example:-Importing-a-downstream-file">Example: Importing a downstream file<a class="anchor-link" href="#Example:-Importing-a-downstream-file">¶</a></h1><p>Consider the file system below.</p>
-<p>Open the file <code>student_marks.csv</code> using <code>program_A.py</code> and read the contents</p>
-<pre><code>Week_08/
-|
-|--- Example A/
-        |
-        |--- program_A.py
-        |--- student_marks.csv
-</code></pre>
-<p>You will need to change directory to run the program...</p>
+<h1 id="Current-Working-Directory">Current Working Directory<a class="anchor-link" href="#Current-Working-Directory">¶</a></h1><p>Remember the basic Terminal commands:</p>
+<ol>
+<li><em>ls</em>  (list) - lists the contents of a directory</li>
+<li><em>pwd</em> (print working directory) - prints the name of the current directory you are in</li>
+<li><em>cd &lt;name of directory&gt;</em> (change directory) - navigates to a new directory</li>
+<li><em>python &lt;name of python file&gt;</em> (change directory) - runs a python file</li>
+</ol>
+<p>These commands can be prefixed with <code>!</code> (e.g. <code>!pwd</code>) to run in Colab.</p>
+<p><code>cd</code> must be prefixed with <code>%</code> in Colab (e.g. <code>%cd &lt;file_path&gt;</code>) so that it changes the working directory for all cells in the notebook.</p>
 </div>
 </div>
 </div>
@@ -7650,14 +7647,16 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Remember the basic Terminal commands:</p>
-<ol>
-<li><em>ls</em>  (list) - lists the contents of a directory</li>
-<li><em>pwd</em> (print working directory) - prints the name of the current directory you are in</li>
-<li><em>cd &lt;name of directory&gt;</em> (change directory) - navigates to a new directory</li>
-</ol>
-<p>These can be prefixed with <code>!</code> (e.g. <code>!pwd</code>) to run in Colab.</p>
-<p><code>cd</code> must be prefixed with <code>%</code> in Colab so that it changes the working directory for all cells in the notebook.</p>
+<h1 id="Example:-Importing-a-downstream-file">Example: Importing a downstream file<a class="anchor-link" href="#Example:-Importing-a-downstream-file">¶</a></h1><p>Consider the file system below.</p>
+<p>Open the file <code>student_marks.csv</code> using <code>program_A.py</code> and read the contents</p>
+<pre><code>Week_08/
+|
+|--- Example A/
+        |
+        |--- program_A.py
+        |--- student_marks.csv
+</code></pre>
+<p>You will need to change directory to run the program</p>
 </div>
 </div>
 </div>
