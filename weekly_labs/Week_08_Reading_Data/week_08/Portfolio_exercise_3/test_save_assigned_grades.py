@@ -111,12 +111,34 @@ if os.path.exists(output_filename):
         else:
             raise ValueError('Incorrect number of rows in output file')
 
+        line_1 = 'Student  Question 1  Question 2  Question 3  Grade'
+        line_2 = 'Martin  6   1   4   Fail'
+        line_3 = 'Arthur   3   8   4   B'
+        line_4 = 'Hemma   7   4   5   A'
+        line_5 = 'Josh 4   7   3   B'
+
 
         if (file[0] == ['Student', 'Question 1', 'Question 2', 'Question 3', 'Grade'] and 
-            file[-1] == ['Josh', '4', '7', '3', 'A']):
-            print('Correct values in output file')
+            file[1] == ['Martin', '6', '1', '4', 'Fail'] and 
+            file[2] == ['Arthur',  '3', '8', '4', 'B'] and 
+            file[3] == ['Hemma', '7', '4', '5', 'A'] and 
+            file[4] == ['Josh', '4', '7', '3', 'B'] 
+            ):
+
+            print('Correct values in output file...')
+            print('First line: ' + line_1)
+            print('Second line line: ' + line_2)
+            print('Third line: ' + line_3 )
+            print('Fourth line: ' + line_4)
+            print('Fifth line: ' + line_5)
         else:
-            raise ValueError(f'Incorrect values in output file, got {file[0]} for first row of saved table and {file[-1]} for last row')
+            raise ValueError(f'Incorrect values in output file \n\
+                I expected {line_1} for line 1 and got {file[0]} \n\
+                I expected {line_2} for line 2 and got {file[1]} \n\
+                I expected {line_3} for line 3 and got {file[2]} \n\
+                I expected {line_4} for line 4 and got {file[3]} \n\
+                I expected {line_5} for line 5 and got {file[4]}'
+                )
 
 else:
     raise ValueError(f"Cannot find output file: {output_filename}")
