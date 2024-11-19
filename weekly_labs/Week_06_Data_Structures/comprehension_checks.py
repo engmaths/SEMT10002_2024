@@ -2,6 +2,7 @@
 names = ["Martin", "Hemma", "Arthur", "Josh"]
 print(names[1])
 
+'''
 names = ["Martin", "Hemma", "Arthur", "Josh"]
 print(names[3])
 
@@ -73,7 +74,7 @@ grades['arthur'] = 'B'
 print(grades['A'])
 print(grades['arthur'])
 
-
+'''
 
 
 

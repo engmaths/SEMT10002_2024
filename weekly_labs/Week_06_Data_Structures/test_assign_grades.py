@@ -85,12 +85,12 @@ print('Got all the data we needed')
 
 # check error
 
-assert(mean == expected_mean, f'Mean does not match. I expected {expected_mean}, but got {mean}')
-assert((standard_deviation - expected_standard_deviation) < 1E-6, f'Standard deviation does not match. \
-    I expected {expected_standard_deviation}, but got {standard_deviation}')
+assert mean == expected_mean, f'Mean does not match. I expected {expected_mean}, but got {mean}'
+assert (standard_deviation - expected_standard_deviation) < 1E-6, f'Standard deviation does not match. \
+    I expected {expected_standard_deviation}, but got {standard_deviation}'
 
 for key in expected_grades:
-    assert(grades[key] == expected_grades[key], f'Wrong grade for martin. I expected {expected_grades[key]} but got {grades[key]}')
+    assert grades[key] == expected_grades[key], f'Wrong grade for martin. I expected {expected_grades[key]} but got {grades[key]}'
 
 # everything OK if we got to here
 print('All tests passed')
