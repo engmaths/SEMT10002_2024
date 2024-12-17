@@ -1,4 +1,4 @@
-sample, moisture, knot_ratio, tree_ring, youngs_modulus, density, beam_length, bend_strength,beam_width,beam_height
+sample,moisture,knot_ratio,tree_ring,youngs_modulus,density,beam_length,bend_strength,beam_width,beam_height
 units,%,-,mm,Gpa,kg/m3,cm,Mpa,cm,cm
 DO1,13.3,0.04,3,3.504,139.989,101,58.4,4,3.3
 DO2,12,0.16,2.5,16.485,1050.004,98.5,74.35,4,3.4
