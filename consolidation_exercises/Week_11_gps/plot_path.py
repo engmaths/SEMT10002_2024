@@ -1,13 +1,15 @@
 """
-Please note this script assumes all longitudes are north and all latitudes are west!
+Completed this by myself (Gilad), as I had to miss the in person session!
+Note this script assumes all longsitudes are north and all latitudes are west!
 """
 
 
 from datetime import datetime
-from pyproj import Transformer, CRS
+from pyproj import Transformer
 import matplotlib.pyplot as plt
+from math import sqrt
 
-gps_file = "gps_walk.txt"
+gps_file = "consolidation_exercises\\Week_11_gps\\gps_walk.txt"
 
 def get_locations(file_path):
     """
@@ -58,6 +60,8 @@ def plot_walk(eastings, northings):
     plt.plot(eastings,northings)
     plt.xlabel('Easting (m)')
     plt.ylabel('Northing (m)')
+    plt.grid(True)
+    plt.gca().set_aspect('equal',adjustable='datalim')
     plt.show()
 
 def get_easting_and_northing(locations):
@@ -72,25 +76,46 @@ def get_easting_and_northing(locations):
     return eastings, northings
 
 
+def calculate_distance(p1: tuple,p2: tuple):
+    """Calculates distance between two coordinate points using pythagoras."""
+    return sqrt((p2[1]-p1[1])**2+(p2[0]-p1[0])**2)
+
+def get_total_distance(eastings, northings):
+    """
+    Calculates total distance walked.
+    Finds the distance between each adjacent location data point and sums them.
+    """
+    total = 0
+    coordinates = list(zip(eastings,northings))
+    for i in range(1, len(coordinates)):
+        total += calculate_distance(coordinates[i-1],coordinates[i])
+    return total
+
+
+def get_total_time(locations):
+    """Calculates the total time of the walk."""
+    times = [i[0] for i in locations]
+    time_diff =  max(times)-min(times)
+    return time_diff.total_seconds()
+
+
 def main():
-    print("\n\n\n\n")
 
     locations = get_locations(gps_file)
     formatted_locations = convert_locations(locations)
-    longitudes = []
-    for data in locations:
-        longitudes.append(float(data[2]))
-
 
     projected_locations = project_locations(formatted_locations)
-    projected_locations.sort(key=lambda x: x[0])
     easting, northing = get_easting_and_northing(projected_locations)
-    # a = [i for i in range(len(northing))]
-    plot_walk(easting,northing)
-    # plt.scatter(a,northing,s=10)
-    # plt.show()
 
-    
+    # Calculate average speed
+    distance_walked = get_total_distance(easting,northing)
+    total_time = get_total_time(projected_locations)
+
+    average_speed = distance_walked/total_time
+    print(f"The average walking speed was: {average_speed} m/s\n\nTravelled: {distance_walked} metres\nTime: {total_time} seconds")
+
+    #Plots the walk
+    plot_walk(easting,northing)
 
 if __name__ == "__main__":
     main()
