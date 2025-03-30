@@ -24,6 +24,7 @@ def create_singleton_grid(length, alive_index):
   
   grid = np.zeros(length, dtype=np.int8)
   #Your code goes here
+  grid[alive_index] = ALIVE
 
   return grid
 
@@ -37,8 +38,15 @@ def create_random_grid(length, alive_probability):
   '''
 
   #Your code goes here
-  grid = [0 for _ in range(length)] 
+  grid = np.zeros(length, dtype=np.int8)
 
+  for c in range(length):
+    random_num = random.random()  
+
+    if random_num < alive_probability:
+      grid[c] = ALIVE
+    else:
+      grid[c] = DEAD
   return np.array(grid, dtype=np.int8)
 
 def update_cell(old_value, left_neighbour, right_neighbour):
@@ -54,6 +62,14 @@ def update_cell(old_value, left_neighbour, right_neighbour):
 
   new_value = 0 
   #Your code goes here
+
+  
+  if old_value == 0 and left_neighbour == 1:
+    new_value = 1
+  else:
+    new_value = 0
+  
+
   return new_value
 
 def update_grid(old_grid, rule=None):
@@ -66,7 +82,13 @@ def update_grid(old_grid, rule=None):
     '''
 
   #Your code goes here
-  new_grid = np.zeros(len(old_grid))
+  new_grid = []
+
+  for i in range(len(old_grid)):
+    value = old_grid[i]
+    left = old_grid[(i-1)%len(old_grid)]
+    right = old_grid[(i+1)%len(old_grid)]
+    new_grid.append(update_cell(value,left,right))
 
   return np.array(new_grid, dtype=np.int8)
 
@@ -121,8 +143,8 @@ def main():
   #run_tests()
 
   #Functions for making a grid - use commenting to choose which runs.
-  grid = create_singleton_grid(GRID_LENGTH, ALIVE_INDEX)
-  #grid = create_random_grid(GRID_LENGTH, ALIVE_PROBABILITY)
+  # grid = create_singleton_grid(GRID_LENGTH, ALIVE_INDEX)
+  grid = create_random_grid(GRID_LENGTH, ALIVE_PROBABILITY)
 
   grids = []
 
